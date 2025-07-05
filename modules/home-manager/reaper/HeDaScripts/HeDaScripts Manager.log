@@ -1,0 +1,133 @@
+4278.87  1.50
+4278.87  nil
+4278.87  nil
+4278.87  nil
+4278.87  (2025-01-31)
+4278.87  ___ Starting Manager ___
+4278.87  Script path: /home/hfv5/.config/REAPER/Scripts/HeDaScripts/HeDaScripts Manager/
+4278.87  Scripts path: /home/hfv5/.config/REAPER/Scripts/
+4278.87  Settings path: /home/hfv5/.config/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/
+4278.87  _resources path: /home/hfv5/.config/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/_resources/
+4278.87  HeDaScripts path: /home/hfv5/.config/REAPER/Scripts/HeDaScripts/
+4278.87  Name script: HeDaScripts Manager
+4278.87  Version: 1.50
+4278.89  Is Linux
+4278.89  using system 7z: 7z
+4278.89  using system curl: curl
+4278.89  ______________ Testing curl: curl --version
+4279.11  0
+curl 8.14.1 (x86_64-pc-linux-gnu) libcurl/8.14.1 OpenSSL/3.4.1 zlib/1.3.1 brotli/1.1.0 zstd/1.5.7 libidn2/2.3.8 libpsl/0.21.5 libssh2/1.11.1 nghttp2/1.65.0
+Release-Date: 2025-06-04
+Protocols: dict file ftp ftps gopher gophers http https imap imaps ipfs ipns mqtt pop3 pop3s rtsp scp sftp smb smbs smtp smtps telnet tftp
+Features: alt-svc AsynchDNS brotli GSS-API HSTS HTTP2 HTTPS-proxy IDN IPv6 Kerberos Largefile libz NTLM PSL SPNEGO SSL threadsafe TLS-SRP UnixSockets zstd
+
+4279.12  37
+4279.12  curl installed ok
+4279.12  _________________ Testing 7z: 7z
+4279.23  0
+
+7-Zip [64] 17.05 : Copyright (c) 1999-2021 Igor Pavlov : 2017-08-28
+p7zip Version 17.05 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,2 CPUs x64)
+
+Usage: 7z <command> [<switches>...] <archive_name> [<file_names>...]
+
+<Commands>
+  a : Add files to archive
+  b : Benchmark
+  d : Delete files from archive
+  e : Extract files from archive (without using directory names)
+  h : Calculate hash values for files
+  i : Show information about supported formats
+  l : List contents of archive
+  rn : Rename files in archive
+  t : Test integrity of archive
+  u : Update files to archive
+  x : eXtract files with full paths
+
+<Switches>
+  -- : Stop switches parsing
+  @listfile : set path to listfile that contains file names
+  -ai[r[-|0]]{@listfile|!wildcard} : Include archives
+  -ax[r[-|0]]{@listfile|!wildcard} : eXclude archives
+  -ao{a|s|t|u} : set Overwrite mode
+  -an : disable archive_name field
+  -bb[0-3] : set output log level
+  -bd : disable progress indicator
+  -bs{o|e|p}{0|1|2} : set output stream for output/error/progress line
+  -bt : show execution time statistics
+  -i[r[-|0]]{@listfile|!wildcard} : Include filenames
+  -m{Parameters} : set compression Method
+    -mmt[N] : set number of CPU threads
+    -mx[N] : set compression level: -mx1 (fastest) ... -mx9 (ultra)
+  -o{Directory} : set Output directory
+  -p{Password} : set Password
+  -r[-|0] : Recurse subdirectories
+  -sa{a|e|s} : set Archive name mode
+  -scc{UTF-8|WIN|DOS} : set charset for for console input/output
+  -scs{UTF-8|UTF-16LE|UTF-16BE|WIN|DOS|{id}} : set charset for list files
+  -scrc[CRC32|CRC64|SHA1|SHA256|*] : set hash function for x, e, h commands
+  -sdel : delete files after compression
+  -seml[.] : send archive by email
+  -sfx[{name}] : Create SFX archive
+  -si[{name}] : read data from stdin
+  -slp : set Large Pages mode
+  -slt : show technical information for l (List) command
+  -snh : store hard links as links
+  -snl : store symbolic links as links
+  -sni : store NT security information
+  -sns[-] : store NTFS alternate streams
+  -so : write data to stdout
+  -spd : disable wildcard matching for file names
+  -spe : eliminate duplication of root folder for extract command
+  -spf : use fully qualified file paths
+  -ssc[-] : set sensitive case mode
+  -ssw : compress shared files
+  -stl : set archive timestamp from the most recently modified file
+  -stm{HexMask} : set CPU thread affinity mask (hexadecimal number)
+  -stx{Type} : exclude archive type
+  -t{Type} : Set type of archive
+  -u[-][p#][q#][r#][x#][y#][z#][!newArchiveName] : Update options
+  -v{Size}[b|k|m|g] : Create volumes
+  -w[{path}] : assign Work directory. Empty path means a temporary directory
+  -x[r[-|0]]{@listfile|!wildcard} : eXclude filenames
+  -y : assume Yes on all queries
+
+4279.23  6
+4279.23  7z installed ok
+4279.23  starting...
+4279.23  Вс 29 июн 2025 20:35:51
+4279.33  ok
+4279.52  35 - reading index updates
+4279.52  4279.520525937
+4279.52  https://reaper.hector-corcin.com/hsmanager_downloads/index_updates.dat
+4280.3  41 - curl
+4280.3  42 - 
+4280.3  found
+4280.3  /home/hfv5/.config/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/_resources/index_updates.dat
+4280.3  43 - index read ok
+4316.42  +++++++++++++ Downloading and installing Import Export Subtitles
+4316.42  16 - Version before: Not Installed
+4316.42  1 - Downloading new update...
+4316.42  2 - 
+4316.42  3 - Import Export Subtitles.7z
+4316.42  4 - 
+4316.42  11 - /home/hfv5/.config/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/_resources/update.sh
+4316.42  12 - FREE
+4316.42  13 - Updating...
+4317.18  45 - checking update...
+4317.18  /home/hfv5/.config/REAPER/Scripts/HeDaScripts/Import Export Subtitles/Import Export Subtitles - changelog.txt
+4317.18  found
+4317.18  /home/hfv5/.config/REAPER/Scripts/HeDaScripts/Import Export Subtitles/Import Export Subtitles - changelog.txt
+4317.18  installedchangelog
+4317.18  table: 0x3faa6460
+4317.18  17 - reading actions to add in (Other)
+4317.18  18 - /home/hfv5/.config/REAPER/Scripts/HeDaScripts/Import Export Subtitles/Import Export Subtitles.dat
+4317.18  HeDa_Import SRT.lua
+4317.18  HeDa_X-Raym_Export selection as SRT subtitles.lua
+4317.18  22 - Adding actions...
+4317.18  adding /home/hfv5/.config/REAPER/Scripts/HeDaScripts/Import Export Subtitles/HeDa_Import SRT.lua
+4317.18  successfully added action: /home/hfv5/.config/REAPER/Scripts/HeDaScripts/Import Export Subtitles/HeDa_Import SRT.lua
+4317.18  adding /home/hfv5/.config/REAPER/Scripts/HeDaScripts/Import Export Subtitles/HeDa_X-Raym_Export selection as SRT subtitles.lua
+4317.18  successfully added action: /home/hfv5/.config/REAPER/Scripts/HeDaScripts/Import Export Subtitles/HeDa_X-Raym_Export selection as SRT subtitles.lua
+4317.18  23 - Version after: 1.7.1
+4320.19  exiting.
