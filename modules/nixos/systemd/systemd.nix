@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs }:
+{ config, lib, pkgs, ... }:
 {
   systemd.services.mpd.environment = {
     XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.hfv5.uid}";

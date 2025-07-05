@@ -1,4 +1,4 @@
-{ builtins }:
+{ builtins, ... }:
 {
   programs.ranger.plugins = {
     name = "devicons";

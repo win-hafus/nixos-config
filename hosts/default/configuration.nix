@@ -128,7 +128,6 @@
 
     nodejs
     openvpn
-    openvpn-3
     networkmanager-openvpn
 
     libGL

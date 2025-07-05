@@ -1,4 +1,5 @@
-{ config }: {
+{ config, ... }:
+{
   programs.waybar.style = with config.lib.stylix.colors.withHashtag; ''
     
     @define-color rosewater #f4dbd6;
