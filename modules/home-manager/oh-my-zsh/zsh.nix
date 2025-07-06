@@ -21,9 +21,9 @@
 
   programs.zsh = {
     enable = true;
-    # syntaxHighlighting.enable = true;
-    # enableCompletion = true;
-    # autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
     # plugins = [
     #   {
     #     name = "zsh-syntax-highlighting";
