@@ -3,7 +3,8 @@
 let
   customOhMyZshTheme = ''
     autoload -U colors && colors
-    PROMPT='%{''${fg_bold[white]}%}[%{''${fg[blue]}%}%t %{''${fg_bold[white]}%}] %{''${fg_bold[white]}%}[ %{''${fg[green]}%}%n%{$reset_color%}@%{''${fg[magenta]}%}%m %{''${fg[blue]}%}%~''$(git_prompt_info) %{''${fg_bold[white]}% ]%{$reset_color%}> '
+    PROMPT='%{''${fg_bold[white]}%}[%{''${fg[blue]}%}%t %{''${fg_bold[white]}%}] %{''${fg_bold[white]}%}[ %{''${fg[green]}%}%n%{$reset_color%}@%{''${fg[magenta]}%}%m %{''${fg[blue]}%}%~''$(git_prompt_info) %{''${fg_bold[white]}% ]%{$reset_color%}
+    > '
     ZSH_THEME_GIT_PROMPT_PREFIX="%{''${fg_bold[yellow]}%}:("
     ZSH_THEME_GIT_PROMPT_SUFFIX=")%{$reset_color%}"
     ZSH_THEME_GIT_PROMPT_CLEAN=" | ok"
@@ -19,9 +20,6 @@ in {
 
   programs.zsh = {
     enable = true;
-    # initContent = ''
-    #   . "/etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh"
-    # '';
     syntaxHighlighting.enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
@@ -38,7 +36,4 @@ in {
       theme = "hafus";
     };
   };
-
-  # catppuccin.zsh-syntax-highlighting.enable = true;
-  # catppuccin.zsh-syntax-highlighting.flavor = "macchiato";
 }
