@@ -1,7 +1,7 @@
 { config, pkgs, inputs, ... }:
 {
   imports = [
-    # ../../modules/home-manager/oh-my-zsh/zsh.nix
+    ../../modules/home-manager/oh-my-zsh/zsh.nix
     ../../modules/home-manager/rofi/rofi.nix
     ../../modules/home-manager/helix/helix.nix
     ../../modules/home-manager/ranger/ranger.nix
