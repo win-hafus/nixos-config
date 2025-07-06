@@ -4,6 +4,10 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/nixos/systemd/systemd.nix
+    ../../modules/nixos/services/services.nix
+    ../../modules/nixos/network/network.nix
+    #TODO: fix ssh with RSA
+    # ../../modules/nixos/ssh/ssh.nix
     inputs.home-manager.nixosModules.default
     inputs.catppuccin.nixosModules.catppuccin
   ];
@@ -69,9 +73,6 @@
     description = "Hafus";
     extraGroups = [ "networkmanager" "wheel" "storage" "video" "audio" ];
     shell = pkgs.zsh;
-    openssh.authorizedKeys.keys = [
-      ../../modules/nixos/ssh/key
-    ];
   };
 
 
