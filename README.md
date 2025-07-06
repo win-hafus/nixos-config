@@ -82,7 +82,6 @@ git clone https://github.com/win-hafus/nixos-config
 3. Wallpapers are managed through SWWW - configure in `home.nix`
 
 ## References
-- [Repository](https://github.com/win-hafus/nixos-config)
 - [Niri Compositor](https://github.com/YaLTeR/niri)
 - [Catppuccin Theme](https://github.com/catppuccin/nix)
 - [Home Manager](https://github.com/nix-community/home-manager)
