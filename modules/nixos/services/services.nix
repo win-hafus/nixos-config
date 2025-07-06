@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, ... }:
 {
   services = {
     openssh = {
@@ -35,19 +35,6 @@
     power-profiles-daemon = {
       package = pkgs.power-profiles-daemon;
       enable = true;
-    };
-
-    mpd = {
-      enable = true;
-      user = "hfv5";
-      musicDirectory = "/home/hfv5/Music";
-      extraConfig = ''
-        audio_output {
-          type "pipewire"
-          name "My PipeWire Output"
-        }
-      '';
-      network.listenAddress = "any";
     };
 
     pipewire = {
