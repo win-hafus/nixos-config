@@ -46,8 +46,6 @@
 
       ranger
       helix
-      mpd
-      mpc
       swww
       eww
       tree
