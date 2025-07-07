@@ -8,8 +8,33 @@ let
     ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
     ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-    PROMPT='
-    [ %{$fg_bold[green]%}%~%{$reset_color%} ][ %{$fg_bold[green]%}%n%{$reset_color%}@%{$fg_bold[magenta]%}%m %{$reset_color%}]$(git_prompt_info)$(virtualenv_prompt_info)%{$reset_color%}[%{$fg_bold[blue]%}%t%{$reset_color%} ]
+    function custom_pwd() {
+      local nixos_dir="/etc/nixos"
+      local pwd="''${PWD}"
+      
+      # Define directory abbreviations
+      local -A abbrev=('home-manager' 'm')
+      
+      if [[ "$pwd" == "$nixos_dir" ]]; then
+        echo "nix-conf"
+      elif [[ "$pwd" == "$nixos_dir"/* ]]; then
+        local suffix="''${pwd#$nixos_dir/}"
+        local parts=("''${(@s:/:)suffix}")
+        
+        # Apply abbreviations to all path components
+        for i in {1..''${#parts}}; do
+          if [[ -n "''${abbrev[''${parts[$i]}]" ]]; then
+            parts[$i]="''${abbrev[''${parts[$i]}]"
+          fi
+        done
+        
+        echo "nix-conf/''${(j:/:)parts}"
+      else
+        print -P '%~'
+      fi
+    }
+
+    PROMPT='[ %{$fg_bold[green]%}$(custom_pwd)%{$reset_color%} ][ %{$fg_bold[green]%}%n%{$reset_color%}@%{$fg_bold[magenta]%}%m %{$reset_color%}]$(git_prompt_info)$(virtualenv_prompt_info)%{$reset_color%}[ %{$fg_bold[blue]%}%t%{$reset_color%} ]
     > '
   '';
 in {
