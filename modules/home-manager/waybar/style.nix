@@ -31,7 +31,7 @@
 
     * {
       font-family: "Cascadia Code";
-      font-size: 11px;
+      font-size: 13px;
       min-height: 0;
     }
 
