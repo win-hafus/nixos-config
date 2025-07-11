@@ -52,6 +52,15 @@
       curl
       p7zip
 
+      cmake                  
+      qt6.full               
+      qt6.qtwayland          
+      qt6.qtshadertools      
+      spirv-tools            
+      pkg-config             
+      jemalloc               
+      cli11  
+
       dropbox-cli
       amneziawg-tools amneziawg-go
   
