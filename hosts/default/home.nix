@@ -41,6 +41,7 @@
       obs-studio
       qbittorrent
       telegram-desktop
+      vscode
 
       flatpak
 
