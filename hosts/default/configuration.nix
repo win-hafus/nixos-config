@@ -54,9 +54,9 @@
       enable = true;
       wlr.enable = true;
       xdgOpenUsePortal = true;
-      extraPortals = [ pkgs.xdg-desktop-portal-gnome pkgs.xdg-desktop-portal-wlr pkgs.xdg-desktop-portal-gtk ];
-      configPackages = [ pkgs.xdg-desktop-portal-gnome pkgs.xdg-desktop-portal-wlr pkgs.xdg-desktop-portal-gtk];
-      config.common.default = "gnome";
+      extraPortals = [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-wlr pkgs.xdg-desktop-portal-gtk ];
+      configPackages = [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-wlr pkgs.xdg-desktop-portal-gtk];
+      config.common.default = "hyprland";
     };
   };
 
@@ -65,6 +65,7 @@
     variables = {
       QT_QPA_PLATFORMTHEME = "qt6ct";
       QT_STYLE_OVERRIDE = "kvantum";
+      QML2_IMPORT_PATH = "${pkgs.qt6.qtdeclarative}/lib/qt-6/qml:${inputs.quickshell.packages.${pkgs.system}.default}/lib/qt-6/qml";
     };
   };
 
@@ -84,6 +85,10 @@
     firefox.enable = true;
     niri.enable = true;
     waybar.enable = true;
+    hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
 
     steam = {
       enable = true;
@@ -132,6 +137,8 @@
     openvpn
     networkmanager-openvpn
 
+    inputs.quickshell.packages.${pkgs.system}.default
+
     libGL
     libGLU
     glfw
@@ -145,8 +152,7 @@
     evince 
     geary 
     gedit 
-    gnome-characters
-    gnome-font-viewer
+    gnome-characters gnome-font-viewer
     gnome-calculator
     gnome-clocks
     gnome-contacts
