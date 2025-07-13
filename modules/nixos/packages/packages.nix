@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, inputs, ... }:
 {
   environment.systemPackages = with pkgs; [
     wayland
@@ -12,11 +12,15 @@
     wget
     git
     htop
+    (flameshot.override{ waylandSupport=true; })
+    grim
+    slurp
 
     curl
     p7zip
     unzip
     zip
+    jq
 
     home-manager
 
@@ -38,7 +42,8 @@
     openvpn
     networkmanager-openvpn
 
-    inputs.quickshell.packages.${pkgs.system}.default
+    # inputs.quickshell.packages.${pkgs.system}.default
+    quickshell
 
     libGL
     libGLU
