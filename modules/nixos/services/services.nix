@@ -32,7 +32,16 @@
         })
       ];
     };
-
+    resolved.enable = true;
+    openvpn = {
+      servers = {
+        protonvpn-nl-free-216 = {
+          config = "/etc/openvpn/nl-free-216.protonvpn.udp.ovpn";
+          autoStart = true;
+          updateResolvConf = true;
+        };
+      };
+    };
     power-profiles-daemon = {
       package = pkgs.power-profiles-daemon;
       enable = true;
