@@ -42,6 +42,7 @@
       qbittorrent
       telegram-desktop
       vscode
+      spotify
 
       flatpak
 
