@@ -5,7 +5,7 @@ My personal NixOS configuration featuring:
 - **Home Manager** integration
 - Modular structure with separate NixOS and Home Manager components
 - Catppuccin theming (Macchiato Lavender variant)
-- Dual desktop environment support (Niri WM + GNOME)
+- Dual desktop environment support (Niri WM + Hyprland)
 
 ## Repository Structure
 ```
@@ -29,7 +29,7 @@ My personal NixOS configuration featuring:
 - **Terminal:** Alacritty
 - **Shell:** Zsh with Oh My Zsh framework
 - **Icons:** Papirus-Dark
-- **Alternative DE:** GNOME (available through SDDM boot menu)
+- **Alternative DE:** [Hyprland](https://github.com/hyprwm/Hyprland) (available through SDDM boot menu)
 
 ## Installation
 ### Option 1: Clean Install (Wipes existing configuration)
@@ -39,7 +39,7 @@ sudo git clone https://github.com/win-hafus/nixos-config /etc/nixos
 # Edit configuration files:
 #   - Set username in hosts/<your-host>.nix
 #   - Configure options in modules/nixos/core.nix
-sudo nixos-rebuild switch --flake /etc/nixos
+sudo nixos-rebuild switch --flake /etc/nixos#hfv5
 ```
 
 ### Option 2: Integrate with Existing Configuration
@@ -59,6 +59,31 @@ git clone https://github.com/win-hafus/nixos-config
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
+  outputs = {self, nixpkgs, quickshell, catppuccin, home-manager }@inputs:
+  {
+    nixosConfigurations.hfv5 = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = { inherit inputs; };
+      modules = [
+        ./hosts/default/configuration.nix
+        catppuccin.nixosModules.catppuccin
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.users.hfv5 = {
+            imports = [
+              ./hosts/default/home.nix
+              catppuccin.homeModules.catppuccin
+            ];
+          };
+        }
+      ];
     };
   };
 }
@@ -83,5 +108,6 @@ git clone https://github.com/win-hafus/nixos-config
 
 ## References
 - [Niri Compositor](https://github.com/YaLTeR/niri)
+- [Hyprland Compositor](https://github.com/hyprwm/Hyprland) 
 - [Catppuccin Theme](https://github.com/catppuccin/nix)
 - [Home Manager](https://github.com/nix-community/home-manager)
