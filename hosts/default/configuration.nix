@@ -23,8 +23,15 @@
   };
 
   boot = {
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
+    loader = {
+      systemd-boot.enable = false;
+      efi.canTouchEfiVariables = true;
+      grub = {
+        enable = true;
+        device = "nodev";
+        efiSupport = true;
+      };
+    };
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
@@ -54,7 +61,8 @@
     portal = {
       enable = true;
       wlr.enable = true;
-      xdgOpenUsePortal = true;
+      # xdgOpenUsePortal = true;
+      xdgOpenUsePortal = false;
       extraPortals = [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-wlr pkgs.xdg-desktop-portal-gtk ];
       configPackages = [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-wlr pkgs.xdg-desktop-portal-gtk];
       config.common.default = "hyprland";
@@ -86,8 +94,8 @@
     firefox.enable = true;
     niri.enable = true;
     waybar.enable = true;
-    hyprpaper = true;
-    hyprlock = true;
+    # hyprpaper.enable = true;
+    hyprlock.enable = true;
     hyprland = {
       enable = true;
       xwayland.enable = true;
