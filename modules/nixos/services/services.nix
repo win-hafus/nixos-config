@@ -37,7 +37,7 @@
       servers = {
         protonvpn-nl-free-216 = {
           config = "/etc/openvpn/nl-free-216.protonvpn.udp.ovpn";
-          autoStart = true;
+          autoStart = false;
           updateResolvConf = true;
         };
       };
