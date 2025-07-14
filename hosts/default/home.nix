@@ -9,6 +9,7 @@
     ../../modules/home-manager/gtk/gtk.nix
     ../../modules/home-manager/qt/qt.nix
     ../../modules/home-manager/waybar/waybar.nix
+    ../../modules/home-manager/hyprland/hyprland.nix
   ];
 
   home = {
@@ -83,6 +84,7 @@
       ZSH_CUSTOM = "${config.home.homeDirectory}/.oh-my-zsh/custom";
     };
   };
+  wayland.windowManager.hyprland.enable = true;
 
   xdg.configFile = let
     qtctConfig = ''
