@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, lib, ... }:
 {
   environment.systemPackages = with pkgs; [
     wayland
@@ -12,7 +12,7 @@
     wget
     git
     htop
-    (flameshot.override{ waylandSupport=true; })
+    (flameshot.override { enableWlrSupport=true; })
     grim
     slurp
 
@@ -42,7 +42,6 @@
     openvpn
     networkmanager-openvpn
 
-    # inputs.quickshell.packages.${pkgs.system}.default
     quickshell
 
     libGL
