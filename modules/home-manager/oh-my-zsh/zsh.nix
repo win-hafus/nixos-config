@@ -27,7 +27,7 @@ let
       fi
     }
 
-    PROMPT='[ %{$fg_bold[green]%}$(custom_pwd)%{$reset_color%} ][ %{$fg_bold[green]%}%n%{$reset_color%}@%{$fg_bold[magenta]%}%m %{$reset_color%}]$(git_prompt_info)$(virtualenv_prompt_info)%{$reset_color%}[%{$fg_bold[blue]%}%t%{$reset_color%} ]
+    PROMPT='[%{$fg_bold[green]%}$(custom_pwd)%{$reset_color%}][%{$fg_bold[green]%}%n%{$reset_color%}@%{$fg_bold[magenta]%}%m%{$reset_color%}]$(git_prompt_info)$(virtualenv_prompt_info)%{$reset_color%}[%{$fg_bold[blue]%}%t%{$reset_color%}]
     > '
     ZSH_THEME_GIT_PROMPT_PREFIX="[ %{$fg[magenta]%}\uE0A0 "
     ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} ]"
