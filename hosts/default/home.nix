@@ -10,6 +10,7 @@
     ../../modules/home-manager/qt/qt.nix
     ../../modules/home-manager/waybar/waybar.nix
     ../../modules/home-manager/hyprland/hyprland.nix
+    ../../modules/home-manager/alacritty/alacritty.nix
   ];
 
   home = {
