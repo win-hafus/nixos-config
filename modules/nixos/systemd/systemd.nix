@@ -4,12 +4,6 @@
     XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.hfv5.uid}";
   };
 
-  systemd.tmpfiles.settings = {
-    "amnezia-wireguard" = {
-      "/etc/amenzia/amneziawg" = { d.mode = "0755"; };
-    };
-  };
-
   systemd = {
     user.services = {
       batteryNotify = {
