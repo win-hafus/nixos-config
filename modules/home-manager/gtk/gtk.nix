@@ -3,9 +3,9 @@
   gtk = {
     enable = true;
     theme = {
-      name = "catppuccin-macchiato-lavender-standard";
+      name = "catppuccin-macchiato-green-standard";
       package = pkgs.catppuccin-gtk.override {
-        accents = [ "lavender" ];
+        accents = [ "green" ];
         size = "standard";
         variant = "macchiato";
       };
