@@ -11,6 +11,7 @@
     ../../modules/home-manager/waybar/waybar.nix
     ../../modules/home-manager/hyprland/hyprland.nix
     ../../modules/home-manager/alacritty/alacritty.nix
+    ../../modules/home-manager/mako/mako.nix
   ];
 
   home = {
