@@ -18,7 +18,7 @@
 ################
 
 # See https://wiki.hyprland.org/Configuring/Monitors/
-monitor=eDP-1,1366x768@60.00, 0x0, 1.0
+monitor=eDP-1,1920x1080@59.93,auto, 1.0
 
 
 ###################
