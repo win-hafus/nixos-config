@@ -8,7 +8,7 @@
         normal = { family = "CascadiaCode"; style = "Regular"; };
         bold  = { family = "CascadiaCode"; style = "Bold"; };
         italic = { family = "CascadiaCode"; style = "Italic"; };
-        size = 11;
+        size = 10;
         glyph_offset = { x = 0; y = 0;};
         builtin_box_drawing = true;
       };
