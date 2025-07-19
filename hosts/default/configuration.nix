@@ -9,8 +9,7 @@
     ../../modules/nixos/packages/packages.nix
     ../../modules/nixos/amneziawg/amneziawg.nix
     ../../modules/nixos/openvpn/openvpn.nix
-    #TODO: fix ssh with RSA
-    # ../../modules/nixos/ssh/ssh.nix
+    ../../modules/nixos/ssh/ssh.nix
     inputs.home-manager.nixosModules.default
     inputs.catppuccin.nixosModules.catppuccin
   ];
