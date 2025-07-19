@@ -31,12 +31,6 @@
       accent = "lavender";
       variant = "macchiato";
     })
-    (catppuccin-sddm.override {
-      flavor = "macchiato";
-      font = "Casacdia Code";
-      fontSize = "11";
-    })
-
     nodejs
     openvpn
     networkmanager-openvpn
