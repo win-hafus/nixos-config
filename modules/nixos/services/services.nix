@@ -33,40 +33,6 @@
       ];
     };
     resolved.enable = true;
-    openvpn = {
-      servers = {
-        nl-1 = {
-          config = "/etc/openvpn/proton-nl-1.ovpn";
-          autoStart = false;
-          updateResolvConf = true;
-        };
-        nl-2 = {
-          config = "/etc/openvpn/proton-nl-2.ovpn";
-          autoStart = false;
-          updateResolvConf = true;
-        };
-        jp-1 = {
-          config = "/etc/openvpn/proton-jp-1.ovpn";
-          autoStart = false;
-          updateResolvConf = true;
-        };
-        jp-2 = {
-          config = "/etc/openvpn/proton-jp-2.ovpn";
-          autoStart = false;
-          updateResolvConf = true;
-        };
-        ro = {
-          config = "/etc/openvpn/proton-ro.ovpn";
-          autoStart = false;
-          updateResolvConf = true;
-        };
-        us = {
-          config = "/etc/openvpn/proton-us.ovpn";
-          autoStart = false;
-          updateResolvConf = true;
-        };
-      };
-    };
     power-profiles-daemon = {
       package = pkgs.power-profiles-daemon;
       enable = true;
@@ -91,7 +57,6 @@
             bluez5.roles = [ "a2dp_sink" "a2dp_source" ];
           };
         };
-        # Add this to disable autoswitching to headset profiles
         configPackages = [
           (pkgs.writeTextDir "bluetooth-policy" ''
             wireplumber.settings = {
