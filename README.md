@@ -4,7 +4,7 @@ My personal NixOS configuration featuring:
 - **Flakes** for reproducible builds
 - **Home Manager** integration
 - Modular structure with separate NixOS and Home Manager components
-- Catppuccin theming (Macchiato Lavender variant)
+- Catppuccin theming (Macchiato Green variant)
 - Dual desktop environment support (Niri WM + Hyprland)
 
 ## Repository Structure
@@ -20,7 +20,7 @@ My personal NixOS configuration featuring:
 ### System
 - **Display Manager:** SDDM (with Catppuccin theme)
 - **Wallpaper Engine:** SWWW
-- **Theme:** Catppuccin Macchiato Lavender
+- **Theme:** Catppuccin Macchiato Green
 
 ### User Environment
 - **Window Manager:** [Niri](https://github.com/YaLTeR/niri) (Wayland compositor)
