@@ -5,7 +5,7 @@ My personal NixOS configuration featuring:
 - **Home Manager** integration
 - Modular structure with separate NixOS and Home Manager components
 - Catppuccin theming (Macchiato Green variant)
-- Dual desktop environment support (Niri WM + Hyprland)
+- Dual desktop environment support (Hyprland + Niri WM)
 
 ## Repository Structure
 ```
@@ -23,14 +23,13 @@ My personal NixOS configuration featuring:
 - **Theme:** Catppuccin Macchiato Green
 
 ### User Environment
-- **Window Manager:** [Niri](https://github.com/YaLTeR/niri) (Wayland compositor)
+- **Window Manager:** [Hyprland](https://github.com/hyprwm/Hyprland) (available through SDDM boot menu)
 - **Application Launcher:** Rofi (Wayland version)
 - **Status Bar:** Waybar
 - **Terminal:** Alacritty
 - **Shell:** Zsh with Oh My Zsh framework
 - **Icons:** Papirus-Dark
-- **Alternative DE:** [Hyprland](https://github.com/hyprwm/Hyprland) (available through SDDM boot menu)
-
+- **Alternative DE:** [Niri](https://github.com/YaLTeR/niri) (Wayland compositor) 
 ## Installation
 ### Option 1: Clean Install (Wipes existing configuration)
 ```bash
@@ -98,16 +97,16 @@ git clone https://github.com/win-hafus/nixos-config
   - SDDM login manager
   - Terminal tools (via catppuccin-nix)
 - Dual desktop environment support:
-  - Default: Niri (Wayland compositor)
-  - Alternate: GNOME (select in SDDM)
+  - Default: Hyprland
+  - Alternate: Niri (select in SDDM)
 
 ## Notes
 1. Replace all instances of `${username}` with your actual username
-2. For GNOME session: Select "GNOME" in SDDM's desktop environment menu
+2. For Niri session: Select "Niri" in SDDM's desktop environment menu
 3. Wallpapers are managed through SWWW - configure in `home.nix`
 
 ## References
-- [Niri Compositor](https://github.com/YaLTeR/niri)
 - [Hyprland Compositor](https://github.com/hyprwm/Hyprland) 
+- [Niri Compositor](https://github.com/YaLTeR/niri)
 - [Catppuccin Theme](https://github.com/catppuccin/nix)
 - [Home Manager](https://github.com/nix-community/home-manager)
