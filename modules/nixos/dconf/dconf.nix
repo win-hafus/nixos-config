@@ -1,6 +1,5 @@
-{ pkgs }:
-{
- dconf = {
+{ pkgs }: {
+  dconf = {
     enable = true;
     settings = {
       "org/gnome/shell" = {

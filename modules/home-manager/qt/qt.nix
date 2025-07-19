@@ -1,5 +1,4 @@
-{config, ...}:
-{
+{ config, ... }: {
   catppuccin.kvantum = {
     enable = true;
     flavor = "macchiato";
@@ -8,7 +7,6 @@
   };
   qt = {
     enable = true;
-    # platformTheme = "qtct";
     platformTheme.name = "kvantum";
     style.name = "kvantum";
   };

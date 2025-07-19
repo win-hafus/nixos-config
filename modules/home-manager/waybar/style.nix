@@ -1,7 +1,6 @@
-{ config, ... }:
-{
+{ config, ... }: {
   programs.waybar.style = with config.lib.stylix.colors.withHashtag; ''
-    
+
     @define-color rosewater #f4dbd6;
     @define-color flamingo #f0c6c6;
     @define-color pink #f5bde6;

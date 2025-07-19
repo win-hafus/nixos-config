@@ -1,5 +1,4 @@
-{ builtins, ... }:
-{
+{ builtins, ... }: {
   programs.ranger.plugins = {
     name = "devicons";
     src = builtins.fetchGit {

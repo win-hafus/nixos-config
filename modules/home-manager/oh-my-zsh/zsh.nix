@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 
 let
   customOhMyZshTheme = ''
@@ -36,7 +36,8 @@ let
     ZSH_THEME_GIT_PROMPT_CLEAN=""
   '';
 in {
-  home.file.".oh-my-zsh/custom/themes/hafus.zsh-theme".text = customOhMyZshTheme;
+  home.file.".oh-my-zsh/custom/themes/hafus.zsh-theme".text =
+    customOhMyZshTheme;
 
   programs.fzf = {
     enable = true;
@@ -50,7 +51,19 @@ in {
     autosuggestion.enable = true;
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "dotenv" "fzf" "man" "node" "nodenv" "npm" "pip" "postgres" "pyenv" "qrcode" ];
+      plugins = [
+        "git"
+        "dotenv"
+        "fzf"
+        "man"
+        "node"
+        "nodenv"
+        "npm"
+        "pip"
+        "postgres"
+        "pyenv"
+        "qrcode"
+      ];
       theme = "hafus";
     };
   };

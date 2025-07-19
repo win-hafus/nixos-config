@@ -64,8 +64,16 @@
       wlr.enable = true;
       # xdgOpenUsePortal = true;
       xdgOpenUsePortal = false;
-      extraPortals = [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-wlr pkgs.xdg-desktop-portal-gtk ];
-      configPackages = [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-wlr pkgs.xdg-desktop-portal-gtk];
+      extraPortals = [
+        pkgs.xdg-desktop-portal-hyprland
+        pkgs.xdg-desktop-portal-wlr
+        pkgs.xdg-desktop-portal-gtk
+      ];
+      configPackages = [
+        pkgs.xdg-desktop-portal-hyprland
+        pkgs.xdg-desktop-portal-wlr
+        pkgs.xdg-desktop-portal-gtk
+      ];
       config.common.default = "hyprland";
     };
   };
@@ -75,7 +83,9 @@
     variables = {
       QT_QPA_PLATFORMTHEME = "qt6ct";
       QT_STYLE_OVERRIDE = "kvantum";
-      QML2_IMPORT_PATH = "${pkgs.qt6.qtdeclarative}/lib/qt-6/qml:${inputs.quickshell.packages.${pkgs.system}.default}/lib/qt-6/qml";
+      QML2_IMPORT_PATH = "${pkgs.qt6.qtdeclarative}/lib/qt-6/qml:${
+          inputs.quickshell.packages.${pkgs.system}.default
+        }/lib/qt-6/qml";
     };
   };
 
@@ -85,7 +95,6 @@
     extraGroups = [ "networkmanager" "wheel" "storage" "video" "audio" ];
     shell = pkgs.zsh;
   };
-
 
   programs = {
     xwayland.enable = true;

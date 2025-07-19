@@ -15,9 +15,10 @@
         lsp.display-messages = true;
       };
       editor.statusline = {
-        left = ["mode" "spinner"];
-        center = ["file-name" "file-modification-indicator" "read-only-indicator"];
-        right = ["diagnostics" "position" "file-type"];
+        left = [ "mode" "spinner" ];
+        center =
+          [ "file-name" "file-modification-indicator" "read-only-indicator" ];
+        right = [ "diagnostics" "position" "file-type" ];
         separator = "│";
         mode.normal = "normal";
         mode.insert = "insert";

@@ -1,5 +1,4 @@
-{ config, pkgs, inputs, ... }:
-{
+{ config, pkgs, inputs, ... }: {
   imports = [
     ../../modules/home-manager/oh-my-zsh/zsh.nix
     ../../modules/home-manager/rofi/rofi.nix
@@ -26,7 +25,6 @@
 
       waybar
       niri
-      mako
       wl-clipboard
       xwayland-satellite
 
@@ -57,23 +55,21 @@
       curl
       p7zip
 
-      cmake                  
-      qt6.full               
-      qt6.qtwayland          
-      qt6.qtshadertools      
-      spirv-tools            
-      pkg-config             
-      jemalloc               
-      cli11  
+      cmake
+      qt6.full
+      qt6.qtwayland
+      qt6.qtshadertools
+      spirv-tools
+      pkg-config
+      jemalloc
+      cli11
 
       dropbox-cli
-      amneziawg-tools amneziawg-go
-  
+      amneziawg-tools
+      amneziawg-go
+
       rocmPackages.llvm.clang-unwrapped
-      lsp-ai
-      helix-gpt
       taplo
-      rustc
       python313
       python313Packages.pip
       libnotify
@@ -98,7 +94,7 @@
   in {
     "Kvantum/kvantum.kvconfig".text = ''
       [General]
-      theme=Catppuccin-Macchiato-Lavender
+      theme=Catppuccin-Macchiato-Green
     '';
     "qt5ct/qt5ct.conf".text = qtctConfig;
     "qt6ct/qt6ct.conf".text = qtctConfig;

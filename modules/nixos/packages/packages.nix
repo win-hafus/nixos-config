@@ -1,5 +1,4 @@
-{ config, pkgs, lib, ... }:
-{
+{ config, pkgs, lib, ... }: {
   environment.systemPackages = with pkgs; [
     wayland
     wayland-utils
@@ -12,7 +11,7 @@
     wget
     git
     htop
-    (flameshot.override { enableWlrSupport=true; })
+    (flameshot.override { enableWlrSupport = true; })
     grim
     slurp
 
@@ -51,13 +50,14 @@
   ];
 
   environment.gnome.excludePackages = (with pkgs; [
-    atomix 
-    cheese 
-    epiphany 
-    evince 
-    geary 
-    gedit 
-    gnome-characters gnome-font-viewer
+    atomix
+    cheese
+    epiphany
+    evince
+    geary
+    gedit
+    gnome-characters
+    gnome-font-viewer
     gnome-calculator
     gnome-clocks
     gnome-contacts
@@ -79,9 +79,9 @@
     gnome-secrets
     gnome-user-docs
     gnome-sound-recorder
-    hitori 
-    iagno 
-    tali 
-    totem 
+    hitori
+    iagno
+    tali
+    totem
   ]);
 }

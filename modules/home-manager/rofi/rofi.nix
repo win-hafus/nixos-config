@@ -4,7 +4,7 @@
   catppuccin.rofi = {
     enable = true;
     flavor = "macchiato";
-    
+
   };
 
   programs.rofi = {
@@ -22,27 +22,26 @@
       sidebar-mode = true;
       fixed-height = false;
       auto-select = true;
-      location = 0;        # Center on screen
+      location = 0;
       xoffset = 0;
       yoffset = 0;
-      lines = 8;           # Max visible items
-      columns = 1;         # Single column layout
-      padding = 5;         # Global padding reduction
-      element-padding = 4; # Element-specific padding
+      lines = 8;
+      columns = 1;
+      padding = 5;
+      element-padding = 4;
     };
 
-    theme = let
-      inherit (config.lib.formats.rasi) mkLiteral;
+    theme = let inherit (config.lib.formats.rasi) mkLiteral;
     in {
       "window" = {
         border = mkLiteral "0";
         border-radius = 8;
-        height = mkLiteral ''"auto"'';    
-        max-height = mkLiteral "50%";     
-        width = mkLiteral "40%";          
-        max-width = mkLiteral "600px";    
+        height = mkLiteral ''"auto"'';
+        max-height = mkLiteral "50%";
+        width = mkLiteral "40%";
+        max-width = mkLiteral "600px";
         background-color = mkLiteral "@mantle";
-        anchor = mkLiteral "center";      
+        anchor = mkLiteral "center";
       };
 
       "mainbox" = {
@@ -125,9 +124,7 @@
         font = mkLiteral ''"Cascadia Code 9"'';
       };
 
-      "mode-switcher" = {
-        background-color = mkLiteral "@surface0";
-      };
+      "mode-switcher" = { background-color = mkLiteral "@surface0"; };
 
       "button selected" = {
         background-color = mkLiteral "@lavender";
