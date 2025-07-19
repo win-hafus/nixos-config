@@ -65,8 +65,7 @@ git clone https://github.com/win-hafus/nixos-config
     };
   };
 
-  outputs = {self, nixpkgs, quickshell, catppuccin, home-manager }@inputs:
-  {
+  outputs = { self, nixpkgs, quickshell, catppuccin, home-manager }@inputs: {
     nixosConfigurations.hfv5 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
@@ -76,10 +75,8 @@ git clone https://github.com/win-hafus/nixos-config
         home-manager.nixosModules.home-manager
         {
           home-manager.users.hfv5 = {
-            imports = [
-              ./hosts/default/home.nix
-              catppuccin.homeModules.catppuccin
-            ];
+            imports =
+              [ ./hosts/default/home.nix catppuccin.homeModules.catppuccin ];
           };
         }
       ];
