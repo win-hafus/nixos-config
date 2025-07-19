@@ -331,7 +331,9 @@
     windowrule = float,class:^(imv)$
     windowrule = float,class:^(mpv)$
     windowrule = float,class:^(vlc)$
-    windowrule = center,floating:1
+    windowrule = center,class:^(imv)$
+    windowrule = center,class:^(mpv)$
+    windowrule = center,class:^(vlc)$
 
     # Ignore maximize requests from apps. You'll probably like this.
     windowrule = suppressevent maximize, class:.*
