@@ -85,6 +85,12 @@
   };
   wayland.windowManager.hyprland.enable = true;
 
+  programs.git = {
+    enable = true;
+    userName = "win-hafus";
+    userEmail = "konstantin.pirs@gmail.com";
+  };
+
   xdg.configFile = let
     qtctConfig = ''
       [Appearance]
