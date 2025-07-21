@@ -44,6 +44,7 @@
       telegram-desktop
       vscode
       spotify
+      kdePackages.kdeconnect-kde
 
       flatpak
 
