@@ -10,6 +10,7 @@
     ../../modules/nixos/amneziawg/amneziawg.nix
     ../../modules/nixos/openvpn/openvpn.nix
     ../../modules/nixos/ssh/ssh.nix
+    ../../modules/nixos/grub/grub.nix
     inputs.home-manager.nixosModules.default
     inputs.catppuccin.nixosModules.catppuccin
   ];
@@ -21,19 +22,6 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "hm-backup";
-  };
-
-  boot = {
-    loader = {
-      systemd-boot.enable = false;
-      efi.canTouchEfiVariables = true;
-      grub = {
-        enable = true;
-        device = "nodev";
-        efiSupport = true;
-      };
-    };
-    kernelPackages = pkgs.linuxPackages_latest;
   };
 
   time.timeZone = "Europe/Moscow";
