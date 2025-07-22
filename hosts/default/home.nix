@@ -58,7 +58,7 @@
       p7zip
       playerctl
       hyprpaper
-      hyprpick
+      hyprpicker
 
       cmake
       qt6.full
