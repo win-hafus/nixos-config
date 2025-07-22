@@ -8,7 +8,7 @@
     settings = {
       theme = "macchiato";
       editor = {
-        line-number = "relative";
+        line-number = "absolute";
         lsp.enable = true;
         soft-wrap.enable = true;
         search.smart-case = true;
