@@ -56,6 +56,7 @@
       curl
       p7zip
       hyprpaper
+      hyprpick
 
       cmake
       qt6.full
