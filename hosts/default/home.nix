@@ -11,6 +11,7 @@
     ../../modules/home-manager/hyprland/hyprland.nix
     ../../modules/home-manager/alacritty/alacritty.nix
     ../../modules/home-manager/mako/mako.nix
+    ../../modules/home-manager/hyprlock/hyprlock.nix
   ];
 
   home = {
@@ -55,6 +56,7 @@
       tree
       curl
       p7zip
+      playerctl
       hyprpaper
       hyprpick
 

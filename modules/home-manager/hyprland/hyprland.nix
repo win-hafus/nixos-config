@@ -235,16 +235,20 @@
     bind = $mainMod SHIFT, C, killactive,
     bind = $mainMod, M, exit,
     bind = $mainMod, E, exec, $fileManager
-    bind = $mainMod, V, togglefloating,
     bind = $mainMod, P, exec, $menu
-    bind = $mainMod, T, pseudo, # dwindle
-    bind = $mainMod, B, togglesplit, # dwindle
     bind = , Print, exec, flameshot gui
+
+    # hyprlock
+    bind = $mainMod SHIFT, L, exec, hyprlock
 
     # float
     bind = $mainMod, G, pin
     bind = $mainMod, C, centerwindow
 
+    # tyling
+    bind = $mainMod, V, togglefloating,
+    bind = $mainMod, B, togglesplit, # dwindle
+    bind = $mainMod, T, pseudo, # dwindle
     bind = $mainMod, F, fullscreen, 1 # Maximize
     bind = $mainMod SHIFT, F, fullscreen, 0 # Fullscreen
 
