@@ -92,7 +92,6 @@
     firefox.enable = true;
     niri.enable = true;
     waybar.enable = true;
-    # hyprpaper.enable = true;
     hyprlock.enable = true;
     hyprland = {
       enable = true;

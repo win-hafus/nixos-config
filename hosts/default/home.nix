@@ -55,6 +55,7 @@
       tree
       curl
       p7zip
+      hyprpaper
 
       cmake
       qt6.full
