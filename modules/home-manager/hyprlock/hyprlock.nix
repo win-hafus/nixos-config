@@ -68,7 +68,7 @@
         {
           text = "cmd[update:1000] ${pkgs.writeShellScript "songdetail" ''
             song_info=$(playerctl metadata --format '{{title}}      {{artist}}')
-            echo \"$song_info\"
+            echo "$song_info"
           ''}";
           color = "rgba(235, 219, 178, .75)";
           font_size = 16;
@@ -91,7 +91,7 @@
         font_color = "rgb(200, 200, 200)";
         font_family = "Cascadia Code Italic";
         fade_on_empty = false;
-        placeholder_text = "'<i><span foreground=\"#ffffff99\">Use Me</span></i>'";
+        placeholder_text = ''<i><span foreground="##ffffff99">Use Me</span></i>'';
         hide_input = false;
         position = "0, -140";
         halign = "center";
