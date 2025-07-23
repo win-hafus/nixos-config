@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.hyprlock = {
     enable = true;
     settings = {
@@ -32,7 +33,7 @@
           halign = "center";
           valign = "top";
         }
-        
+
         # Date
         {
           text = "cmd[update:1000] echo \"<span>$(date '+%A, %d %B')</span>\"";

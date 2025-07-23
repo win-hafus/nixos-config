@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [ ./style.nix ];
   programs.waybar = {
     enable = true;
@@ -8,7 +9,10 @@
         position = "top";
         output = [ "eDP-1" ];
         modules-left = [ "niri/workspaces" ];
-        modules-center = [ "clock" "pulseaudio" ];
+        modules-center = [
+          "clock"
+          "pulseaudio"
+        ];
         modules-right = [
           "network"
           "custom/warpcheck"
@@ -27,7 +31,13 @@
         "pulseaudio" = {
           format = "{icon} {volume}%";
           format-muted = "";
-          format-icons = { default = [ "" "" "" ]; };
+          format-icons = {
+            default = [
+              ""
+              ""
+              ""
+            ];
+          };
           on-click = "pavucontrol";
         };
 
@@ -74,7 +84,13 @@
           format = "{icon} {capacity}";
           format-charging = "{icon}󱐋 {capacity}";
           format-alt = "{icon}";
-          format-icons = [ "" "" "" "" "" ];
+          format-icons = [
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
         };
 
         "power-profiles-daemon" = {
@@ -97,4 +113,3 @@
     };
   };
 }
-

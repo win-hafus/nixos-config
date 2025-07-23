@@ -13,22 +13,33 @@
     };
   };
 
-  outputs = { self, nixpkgs, minegrub-world-sel-theme, quickshell, catppuccin, home-manager }@inputs: {
-    nixosConfigurations.hfv5 = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./hosts/default/configuration.nix
-        catppuccin.nixosModules.catppuccin
-        home-manager.nixosModules.home-manager
-        minegrub-world-sel-theme.nixosModules.default
-        {
-          home-manager.users.hfv5 = {
-            imports =
-              [ ./hosts/default/home.nix catppuccin.homeModules.catppuccin ];
-          };
-        }
-      ];
+  outputs =
+    {
+      self,
+      nixpkgs,
+      minegrub-world-sel-theme,
+      quickshell,
+      catppuccin,
+      home-manager,
+    }@inputs:
+    {
+      nixosConfigurations.hfv5 = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/default/configuration.nix
+          catppuccin.nixosModules.catppuccin
+          home-manager.nixosModules.home-manager
+          minegrub-world-sel-theme.nixosModules.default
+          {
+            home-manager.users.hfv5 = {
+              imports = [
+                ./hosts/default/home.nix
+                catppuccin.homeModules.catppuccin
+              ];
+            };
+          }
+        ];
+      };
     };
-  };
 }

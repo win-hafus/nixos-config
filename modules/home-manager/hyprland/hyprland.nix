@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   wayland.windowManager.hyprland.extraConfig = ''
     # This is an example Hyprland config file.
     # Refer to the wiki for more information.

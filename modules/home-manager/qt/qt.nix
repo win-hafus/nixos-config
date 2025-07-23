@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, ... }:
+{
   catppuccin.kvantum = {
     enable = true;
     flavor = "macchiato";

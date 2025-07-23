@@ -35,9 +35,9 @@ let
     ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
     ZSH_THEME_GIT_PROMPT_CLEAN=""
   '';
-in {
-  home.file.".oh-my-zsh/custom/themes/hafus.zsh-theme".text =
-    customOhMyZshTheme;
+in
+{
+  home.file.".oh-my-zsh/custom/themes/hafus.zsh-theme".text = customOhMyZshTheme;
 
   programs.fzf = {
     enable = true;

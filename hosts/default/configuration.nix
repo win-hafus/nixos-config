@@ -1,4 +1,10 @@
-{ config, pkgs, inputs, lib, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 
 {
   imports = [
@@ -15,7 +21,10 @@
     inputs.catppuccin.nixosModules.catppuccin
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nixpkgs.config.allowUnfree = true;
 
   home-manager = {
@@ -72,15 +81,21 @@
       QT_QPA_PLATFORMTHEME = "qt6ct";
       QT_STYLE_OVERRIDE = "kvantum";
       QML2_IMPORT_PATH = "${pkgs.qt6.qtdeclarative}/lib/qt-6/qml:${
-          inputs.quickshell.packages.${pkgs.system}.default
-        }/lib/qt-6/qml";
+        inputs.quickshell.packages.${pkgs.system}.default
+      }/lib/qt-6/qml";
     };
   };
 
   users.users.hfv5 = {
     isNormalUser = true;
     description = "Hafus";
-    extraGroups = [ "networkmanager" "wheel" "storage" "video" "audio" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "storage"
+      "video"
+      "audio"
+    ];
     shell = pkgs.zsh;
   };
 

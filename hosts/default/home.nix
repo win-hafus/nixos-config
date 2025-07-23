@@ -1,4 +1,10 @@
-{ config, pkgs, inputs, ... }: {
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
+{
   imports = [
     ../../modules/home-manager/oh-my-zsh/zsh.nix
     ../../modules/home-manager/rofi/rofi.nix
@@ -35,6 +41,7 @@
       imv
       mpv
       rofi-wayland
+      wlogout
       reaper
       reaper-sws-extension
       discord
@@ -61,12 +68,6 @@
       hyprpicker
 
       cmake
-      qt6.full
-      qt6.qtwayland
-      qt6.qtshadertools
-      spirv-tools
-      pkg-config
-      jemalloc
       cli11
 
       dropbox-cli
@@ -96,20 +97,22 @@
     userEmail = "konstantin.pirs@gmail.com";
   };
 
-  xdg.configFile = let
-    qtctConfig = ''
-      [Appearance]
-      icon_theme = "Papirus-Dark"
-      style = "kvantum"
-    '';
-  in {
-    "Kvantum/kvantum.kvconfig".text = ''
-      [General]
-      theme=Catppuccin-Macchiato-Green
-    '';
-    "qt5ct/qt5ct.conf".text = qtctConfig;
-    "qt6ct/qt6ct.conf".text = qtctConfig;
-  };
+  xdg.configFile =
+    let
+      qtctConfig = ''
+        [Appearance]
+        icon_theme = "Papirus-Dark"
+        style = "kvantum"
+      '';
+    in
+    {
+      "Kvantum/kvantum.kvconfig".text = ''
+        [General]
+        theme=Catppuccin-Macchiato-Green
+      '';
+      "qt5ct/qt5ct.conf".text = qtctConfig;
+      "qt6ct/qt6ct.conf".text = qtctConfig;
+    };
 
   programs.home-manager.enable = true;
 }

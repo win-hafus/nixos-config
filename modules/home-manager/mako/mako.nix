@@ -10,8 +10,12 @@
       default-timeout = 5000;
       border-radius = 8;
 
-      "urgency=low" = { border-color = "#eed49f"; };
-      "urgency=high" = { border-color = "#f5a97f"; };
+      "urgency=low" = {
+        border-color = "#eed49f";
+      };
+      "urgency=high" = {
+        border-color = "#f5a97f";
+      };
     };
   };
 }
