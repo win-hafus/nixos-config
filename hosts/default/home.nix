@@ -13,7 +13,7 @@
     ../../modules/home-manager/reaper/reaper.nix
     ../../modules/home-manager/gtk/gtk.nix
     ../../modules/home-manager/qt/qt.nix
-    ../../modules/home-manager/waybar/waybar.nix
+    # ../../modules/home-manager/waybar/waybar.nix
     ../../modules/home-manager/hyprland/hyprland.nix
     ../../modules/home-manager/alacritty/alacritty.nix
     ../../modules/home-manager/mako/mako.nix
@@ -76,7 +76,9 @@
 
       rocmPackages.llvm.clang-unwrapped
       taplo
+      gobject-introspection
       python313
+      python313Packages.pygobject3
       python313Packages.pip
       libnotify
       go
