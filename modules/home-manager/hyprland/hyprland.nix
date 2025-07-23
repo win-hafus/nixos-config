@@ -239,7 +239,7 @@
     bind = , Print, exec, flameshot gui
 
     # hyprlock
-    bind = $mainMod SHIFT, L, exec, hyprlock
+    bind = $mainMod, U, exec, hyprlock
 
     # float
     bind = $mainMod, G, pin
