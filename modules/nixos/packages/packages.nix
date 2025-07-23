@@ -41,47 +41,9 @@
     openvpn
     networkmanager-openvpn
 
-    quickshell
-
     libGL
     libGLU
     glfw
     mesa
   ];
-
-  environment.gnome.excludePackages = (with pkgs; [
-    atomix
-    cheese
-    epiphany
-    evince
-    geary
-    gedit
-    gnome-characters
-    gnome-font-viewer
-    gnome-calculator
-    gnome-clocks
-    gnome-contacts
-    gnome-control-center
-    gnome-calendar
-    gnome-disk-utility
-    gnome-maps
-    gnome-software
-    gnome-text-editor
-    gnome-weather
-    eog
-    evince
-    gnome-music
-    gnome-photos
-    gnome-terminal
-    gnome-tour
-    gnome-logs
-    gnome-photos
-    gnome-secrets
-    gnome-user-docs
-    gnome-sound-recorder
-    hitori
-    iagno
-    tali
-    totem
-  ]);
 }
