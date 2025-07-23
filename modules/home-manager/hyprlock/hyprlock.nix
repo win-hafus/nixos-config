@@ -58,6 +58,7 @@
         {
           text = "Hello, $USER";
           color = "rgba(255, 255, 255, 0.65)";
+          position = "0, -70";
           font_size = 25;
           font_family = "Fira Code Bold";
           halign = "center";
