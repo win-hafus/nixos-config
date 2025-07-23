@@ -9,8 +9,8 @@
       enable = true;
       customIcons = [{
         name = "nixos";
-        lineTop = "NixOS (some date)";
-        lineBottom = "Survival Mode, No Cheats, Version: 23.11";
+        lineTop = "NixOS";
+        lineBottom = "Survival Mode, No Cheats, Version: 25.05";
         imgName = "nixos";
       }];
     };
