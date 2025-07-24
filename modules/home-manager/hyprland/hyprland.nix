@@ -109,9 +109,9 @@
 
         shadow {
             enabled = true
-            range = 15
+            range = 5
             render_power = 1
-            color = rgba(1a1a2aaa)
+            color = rgba(000000aa)
         }
 
         # https://wiki.hyprland.org/Configuring/Variables/#blur
