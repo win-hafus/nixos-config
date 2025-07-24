@@ -18,6 +18,7 @@
     ../../modules/home-manager/alacritty/alacritty.nix
     ../../modules/home-manager/mako/mako.nix
     ../../modules/home-manager/hyprlock/hyprlock.nix
+    ../../modules/home-manager/vscode/vscode.nix
   ];
 
   home = {
@@ -65,6 +66,7 @@
       playerctl
       hyprpaper
       hyprpicker
+      nixfmt
 
       cmake
       cli11
