@@ -105,7 +105,6 @@
     zsh.enable = true;
     dconf.enable = true;
     firefox.enable = true;
-    niri.enable = true;
     waybar.enable = true;
     hyprlock.enable = true;
     hyprland = {

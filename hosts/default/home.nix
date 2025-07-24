@@ -31,7 +31,6 @@
       fzf
 
       waybar
-      niri
       wl-clipboard
       xwayland-satellite
 

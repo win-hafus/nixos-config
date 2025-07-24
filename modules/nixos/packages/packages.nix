@@ -9,7 +9,6 @@
     wayland
     wayland-utils
 
-    niri
     waybar
     alacritty
 
