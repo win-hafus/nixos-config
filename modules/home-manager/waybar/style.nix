@@ -1,7 +1,7 @@
-{ config, ... }:
 {
-  programs.waybar.style = with config.lib.stylix.colors.withHashtag; ''
-
+  programs.waybar = {
+  enable = true;
+  style = ''
     @define-color rosewater #f4dbd6;
     @define-color flamingo #f0c6c6;
     @define-color pink #f5bde6;
@@ -30,106 +30,105 @@
     @define-color crust #181926;
 
     * {
-      font-family: "Cascadia Code";
-      font-size: 13px;
+      font-family: Cascadia Code;
+      font-size: 17px;
       min-height: 0;
     }
 
     window#waybar {
-      background-color: transparent;
-      border: 0;
+      background: @mantle;
+      color: @text;
     }
 
     #workspaces {
+      border-radius: 8px;
       margin: 5px;
-      margin-left: 5px;
+      margin-left: 10px;
+      background-color: @surface0;
+      padding: 0.1rem 0.4rem;
     }
 
     #workspaces button {
-      background-color: @base;
-      color: @text;
-      padding: 0.4rem;
-      border-radius: 0;
+      color: @surface1;
+      border-radius: 8px;
+      padding: 0.1rem 0.4rem;
     }
 
-    #workspaces button:hover, #workspaces button.active {
-      background-color: @lavender;
-      color: @base;
-      border-radius: 0;
+    #workspaces button.active {
+      color: @sky;
+      border-radius: 8px;
     }
 
-    #workspaces button:first-child {
-        border-radius: 6px 0 0 6px;
+    #workspaces button:hover {
+      color: @sapphire;
+      border-radius: 8px;
     }
 
-    #workspaces button:last-child {
-        border-radius: 0 6px 6px 0;
-    }
-
+    #custom-music,
     #tray,
-    #custom-power,
+    #backlight,
     #clock,
     #battery,
     #pulseaudio,
-    #custom-power,
-    #network,
-    #custom-cpu,
-    #custom-warpcheck,
-    #language,
-    #power-profiles-daemon {
-      background-color: @base;
-      color: @text;
-      padding: 0.4rem 1rem;
+    #custom-lock,
+    #custom-power {
+      background-color: @surface0;
+      padding: 0.1rem 1rem;
       margin: 5px 0;
     }
 
-    #battery {
-      padding-left: .5rem; }
-
     #clock {
-      border-radius: 6px 0 0  6px;
-    }
-
-    #pulseaudio {
-      border-radius: 0 6px 6px 0;
-    }
-
-    #network {
-      border-radius: 6px 0 0 6px;
-      padding-left: 1rem;
-    }
-
-
-    #language {
-      border-radius: 6px 0 0 6px;
-      padding-left: 1rem;
-    }
-
-    #custom-warpcheck {
-      border-radius: 0 6px 6px 0;
-      padding-right: 1rem;
+      color: @blue;
+      border-radius: 0px 8px 8px 0px;
       margin-right: 1rem;
+    }
+
+    #battery {
+      color: @green;
+    }
+
+    #battery.charging {
+      color: @green;
     }
 
     #battery.warning:not(.charging) {
       color: @red;
     }
 
+    #backlight {
+      color: @yellow;
+    }
+
+    #backlight, #battery {
+        border-radius: 0;
+    }
+
+    #pulseaudio {
+      color: @maroon;
+      border-radius: 8px 0px 0px 8px;
+      margin-left: 1rem;
+    }
+
+    #custom-music {
+      color: @mauve;
+      border-radius: 8px;
+    }
+
+    #custom-lock {
+        border-radius: 8px 0px 0px 8px;
+        color: @lavender;
+    }
+
     #custom-power {
-        border-radius: 0px 6px 6px 0px;
-        margin-right: 1rem;
-        padding-left: 0.5rem;
-        padding-right: 1.5rem;
+        margin-right: 10px;
+        border-radius: 0px 8px 8px 0px;
+        color: @red;
     }
 
     #tray {
-      margin-right: 2px;
-      border-radius: 6px;
-    }
-
-    #custom-cpu {
       margin-right: 1rem;
-      border-radius: 6px;
+      border-radius: 8px;
     }
-  '';
+    '';
+  };
 }

@@ -1,113 +1,83 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
+
 {
-  imports = [ ./style.nix ];
+  imports = [ ./style.nix  ];
   programs.waybar = {
     enable = true;
     settings = {
       mainBar = {
         layer = "top";
         position = "top";
-        output = [ "eDP-1" ];
-        modules-left = [ "niri/workspaces" ];
-        modules-center = [
-          "clock"
-          "pulseaudio"
-        ];
-        modules-right = [
-          "network"
-          "custom/warpcheck"
-          "niri/language"
-          "battery"
-          "power-profiles-daemon"
-          "custom/power"
-          "tray"
-        ];
 
-        "clock" = {
-          timezone = "Europe/Moscow";
-          format = " {:%H:%M}";
-        };
+        modules-left = [ "hyprland/workspaces" ];
+        modules-center = [ "custom/music" ];
+        modules-right = [ "pulseaudio" "battery" "clock" "tray" "custom/lock" "custom/power" ];
 
-        "pulseaudio" = {
-          format = "{icon} {volume}%";
-          format-muted = "";
+        "hyprland/workspaces" = {
+          disable-scroll = true;
+          sort-by-name = true;
+          format = " {icon} ";
           format-icons = {
-            default = [
-              ""
-              ""
-              ""
-            ];
+            default = "";
           };
-          on-click = "pavucontrol";
         };
 
-        "custom/warpcheck" = {
-          format = "󰢩  {text}";
-          exec = pkgs.writeShellScript "warpcheck" ''
-            if [[ $(ip link | grep "WARP") ]]; then
-            	echo "on" &
-            else
-            	echo "off" &
-            fi
-          '';
-          interval = 10;
+        tray = {
+          icon-size = 21;
+          spacing = 10;
         };
 
-        "custom/power" = {
-          format = "";
-          on-click = "eww open powermenu";
-        };
-
-        "network" = {
-          interface = "wlp1s0";
-          format = "{ifname}";
-          format-wifi = "{essid} ({signalStrength}%) ";
-          format-ethernet = "{ifname} ";
-          format-disconnected = "";
-          tooltip-format = "{ifname}";
-          tooltip-format-wifi = "{essid} ({signalStrength}%) ";
-          tooltip-format-ethernet = "{ifname} ";
-          tooltip-format-disconnected = "Disconnected";
+        "custom/music" = {
+          format = "󰎇 {}";
+          escape = true;
+          interval = 5;
+          tooltip = false;
+          exec = "playerctl metadata --format='{{ artist }} -- {{ title }}'";
+          on-click = "playerctl play-pause";
           max-length = 50;
         };
 
-        "niri/language" = {
-          format-en = "us";
-          format-ru = "ru";
+        clock = {
+          timezone = "Europe/Moscow";
+          tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+          format-alt = "󰥔 {:%d/%m/%Y}";
+          format = "󰥔 {:%H:%M}";
         };
 
-        "battery" = {
+        battery = {
           states = {
             warning = 30;
             critical = 15;
           };
-          format = "{icon} {capacity}";
-          format-charging = "{icon}󱐋 {capacity}";
+          format = "{icon}";
+          format-charging = "󱐋";
+          format-plugged = "󰚥";
           format-alt = "{icon}";
           format-icons = [
-            ""
-            ""
-            ""
-            ""
-            ""
+            "󰂃" "󰂎" "󰁺" "󰁻" "󰁼" "󰁽"
+            "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"
           ];
         };
 
-        "power-profiles-daemon" = {
-          format = "{icon}";
-          tooltip-format = "Power profile = {profile}nDriver = {driver}";
-          tooltip = true;
+        pulseaudio = {
+          format = "{icon} {volume}%";
+          format-muted = "󰖁";
           format-icons = {
-            default = "";
-            performance = "";
-            balanced = "";
-            power-saver = "";
+            default = [ "󰕿" "󰖀" "󰕾" ];
           };
+          on-click = "pavucontrol";
         };
 
-        "tray" = {
-          icon-size = 15;
-          spacing = 10;
+        "custom/lock" = {
+          tooltip = false;
+          on-click = "sh -c '(sleep 0.5s; hyprlock)' & disown";
+          format = "";
+        };
+
+        "custom/power" = {
+          tooltip = false;
+          on-click = "wlogout &";
+          format = "󰐥";
         };
       };
     };

@@ -13,7 +13,7 @@
     ../../modules/home-manager/reaper/reaper.nix
     ../../modules/home-manager/gtk/gtk.nix
     ../../modules/home-manager/qt/qt.nix
-    # ../../modules/home-manager/waybar/waybar.nix
+    ../../modules/home-manager/waybar/waybar.nix
     ../../modules/home-manager/hyprland/hyprland.nix
     ../../modules/home-manager/alacritty/alacritty.nix
     ../../modules/home-manager/mako/mako.nix
