@@ -18,7 +18,8 @@
     ################
 
     # See https://wiki.hyprland.org/Configuring/Monitors/
-    monitor=eDP-1,1920x1080@59.93,auto, 1.0
+    monitor=HDMI-A-1,1920x1080@180,0x0,1.0
+    monitor=eDP-1,1920x1080@59.93,1920x0,1.0
 
 
     ###################
@@ -109,15 +110,16 @@
 
         shadow {
             enabled = true
-            range = 5
-            render_power = 1
-            color = rgba(000000aa)
+            range = 4
+            render_power = 3
+            scale = 0.5
+            color = rgba(00000022)
         }
 
         # https://wiki.hyprland.org/Configuring/Variables/#blur
         blur {
             enabled = true
-            size = 3
+            size = 8
             passes = 5
 
             vibrancy = 0.1696
