@@ -59,7 +59,6 @@
     portal = {
       enable = true;
       wlr.enable = true;
-      # xdgOpenUsePortal = true;
       xdgOpenUsePortal = false;
       extraPortals = [
         pkgs.xdg-desktop-portal-hyprland
@@ -80,9 +79,6 @@
     variables = {
       QT_QPA_PLATFORMTHEME = "qt6ct";
       QT_STYLE_OVERRIDE = "kvantum";
-      QML2_IMPORT_PATH = "${pkgs.qt6.qtdeclarative}/lib/qt-6/qml:${
-        inputs.quickshell.packages.${pkgs.system}.default
-      }/lib/qt-6/qml";
     };
   };
 
