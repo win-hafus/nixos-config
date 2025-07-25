@@ -17,7 +17,7 @@
           family = "CascadiaCode";
           style = "Italic";
         };
-        size = 10;
+        size = 9;
         glyph_offset = {
           x = 0;
           y = 0;
