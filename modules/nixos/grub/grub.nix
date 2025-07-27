@@ -5,6 +5,7 @@
   ...
 }:
 {
+  boot.initrd.kernelModules = [ "amdgpu" ];
   boot.loader.grub = {
     enable = true;
     efiSupport = true;
