@@ -51,7 +51,11 @@
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   hardware.graphics = {
     enable = true;
-    extraPackages = [ pkgs.vpl-gpu-rt ];
+    extraPackages = [
+      pkgs.vpl-gpu-rt
+      pkgs.intel-media-driver
+      pkgs.intel-compute-runtime
+    ];
   };
   hardware = {
     bluetooth.enable = true;
