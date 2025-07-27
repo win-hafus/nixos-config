@@ -19,6 +19,7 @@
     ../../modules/home-manager/mako/mako.nix
     ../../modules/home-manager/hyprlock/hyprlock.nix
     ../../modules/home-manager/vscode/vscode.nix
+    ../../modules/home-manager/hyprpaper/hyprpaper.nix
   ];
 
   home = {
@@ -58,7 +59,6 @@
 
       ranger
       helix
-      swww
       eww
       tree
       curl
