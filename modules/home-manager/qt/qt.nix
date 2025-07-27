@@ -3,7 +3,7 @@
   catppuccin.kvantum = {
     enable = true;
     flavor = "macchiato";
-    accent = "green";
+    accent = "lavender";
     apply = true;
   };
   qt = {

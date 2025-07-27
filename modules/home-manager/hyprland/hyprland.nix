@@ -45,6 +45,7 @@
     # exec-once = nm-applet &
     # exec-once = waybar & hyprpaper & firefox
     exec-once = swww-daemon
+    exec-once = waybar
 
     #############################
     ### ENVIRONMENT VARIABLES ###
@@ -87,7 +88,7 @@
         border_size = 2
 
         # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
-        col.active_border = rgba(a6da95ff)
+        col.active_border = rgba(b7bdf8ff)
         col.inactive_border = rgba(1e1e2eaa)
 
         # Set to true enable resizing windows by clicking and dragging on borders and gaps
