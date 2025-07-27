@@ -18,7 +18,7 @@
       home-manager,
     }@inputs:
     {
-      nixosConfigurations.hfv5 = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
