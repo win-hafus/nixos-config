@@ -99,7 +99,20 @@
     enable = true;
     userName = "win-hafus";
     userEmail = "konstantin.pirs@gmail.com";
+    extraConfig = {
+      core.sshCommand = "${pkgs.openssh}/bin/ssh -i ~/.ssh/id_ed25519";
+    };
   };
+
+  services.ssh-agent.enable = true;
+  programs.ssh = {
+    addKeysToAgent = "yes";
+    extraConfig = ''
+      Host *
+        IdentityFile ~/.ssh/id_ed25519
+    '';
+  };
+  
   programs.mangohud.enable = true;
 
   xdg.configFile =
