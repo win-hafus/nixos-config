@@ -99,6 +99,7 @@
     userName = "win-hafus";
     userEmail = "konstantin.pirs@gmail.com";
   };
+  programs.mangohud.enable = true;
 
   xdg.configFile =
     let
