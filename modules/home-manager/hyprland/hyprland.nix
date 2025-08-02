@@ -46,6 +46,7 @@
     # exec-once = waybar & hyprpaper & firefox
     exec-once = hyprpaper
     exec-once = waybar
+    exec-once = Telegram
 
     #############################
     ### ENVIRONMENT VARIABLES ###
