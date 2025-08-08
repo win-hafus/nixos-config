@@ -54,7 +54,6 @@
       telegram-desktop
       vscode
       spotify
-      kdePackages.kdeconnect-kde
 
       flatpak
 
@@ -76,11 +75,7 @@
       amneziawg-tools
       amneziawg-go
 
-      rocmPackages.llvm.clang-unwrapped
-      taplo
-      gobject-introspection
       python313
-      python313Packages.pygobject3
       python313Packages.pip
       libnotify
       go
