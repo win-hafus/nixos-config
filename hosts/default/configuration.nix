@@ -14,8 +14,6 @@
     ../../modules/nixos/network/network.nix
     ../../modules/nixos/packages/packages.nix
     ../../modules/nixos/amneziawg/amneziawg.nix
-    ../../modules/nixos/openvpn/openvpn.nix
-    ../../modules/nixos/ssh/ssh.nix
     ../../modules/nixos/grub/grub.nix
     inputs.home-manager.nixosModules.default
     inputs.catppuccin.nixosModules.catppuccin
