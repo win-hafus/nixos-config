@@ -4,7 +4,7 @@ My personal NixOS configuration featuring:
 - **Flakes** for reproducible builds
 - **Home Manager** integration
 - Modular structure with separate NixOS and Home Manager components
-- Catppuccin theming (Macchiato Green variant)
+- Catppuccin theming (Macchiato Lavender variant)
 
 ## Repository Structure
 ```
