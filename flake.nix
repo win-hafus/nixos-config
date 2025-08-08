@@ -3,6 +3,10 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     catppuccin.url = "github:catppuccin/nix";
     minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -13,9 +17,10 @@
     {
       self,
       nixpkgs,
+      home-manager,
       minegrub-world-sel-theme,
       catppuccin,
-      home-manager,
+      zen-browser,
     }@inputs:
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {

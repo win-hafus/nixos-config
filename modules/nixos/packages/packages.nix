@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }:
 {
@@ -11,6 +12,11 @@
 
     waybar
     alacritty
+    (inputs.zen-browser.packages."${system}".default.override {
+      policies = {
+        disableTelemetry = true;
+      };
+    })
 
     helix
     wget
