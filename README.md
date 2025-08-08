@@ -18,8 +18,8 @@ My personal NixOS configuration featuring:
 ## Key Components
 ### System
 - **Display Manager:** SDDM (with Catppuccin theme)
-- **Wallpaper Engine:** SWWW
-- **Theme:** Catppuccin Macchiato Green
+- **Wallpaper Engine:** HyprPaper
+- **Theme:** Catppuccin Macchiato Lavender
 
 ### User Environment
 - **Window Manager:** [Hyprland](https://github.com/hyprwm/Hyprland) (available through SDDM boot menu)
