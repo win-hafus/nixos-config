@@ -12,11 +12,7 @@
 
     waybar
     alacritty
-    (inputs.zen-browser.packages."${system}".default.override {
-      policies = {
-        disableTelemetry = true;
-      };
-    })
+    inputs.zen-browser.packages."${system}".default
 
     helix
     wget
