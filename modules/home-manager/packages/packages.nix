@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     zsh
@@ -25,6 +26,7 @@
     telegram-desktop
     vscode
     spotify
+
 
     flatpak
 
