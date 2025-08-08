@@ -17,20 +17,12 @@
     git
     htop
     (flameshot.override { enableWlrSupport = true; })
-    grim
-    slurp
 
     curl
     p7zip
     unzip
     zip
     jq
-
-    home-manager
-
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.appindicator
-    gnome-session
 
     (catppuccin-kvantum.override {
       accent = "lavender";
