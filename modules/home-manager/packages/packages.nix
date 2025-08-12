@@ -32,7 +32,6 @@
 
     ranger
     helix
-    eww
     tree
     curl
     p7zip

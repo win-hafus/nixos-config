@@ -97,9 +97,7 @@
     xwayland.enable = true;
     fish.enable = true;
     zsh.enable = true;
-    dconf.enable = true;
     firefox.enable = true;
-    # waybar.enable = true;
     hyprlock.enable = true;
     hyprland = {
       enable = true;
