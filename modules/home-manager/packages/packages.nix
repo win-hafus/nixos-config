@@ -26,7 +26,7 @@
     telegram-desktop
     vscode
     spotify
-
+    obsidian
 
     flatpak
 
