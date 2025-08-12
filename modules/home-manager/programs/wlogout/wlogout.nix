@@ -1,9 +1,4 @@
 {
-  home.file.".config/wlogout/icons/" = {
-    source = ./icons;
-    recursive = true;
-  };
-
   programs.wlogout = {
     enable = true;
     style = ''
@@ -36,30 +31,30 @@
 
 
         #lock {
-            background-image: url("${builtins.toString ./icons/lock.svg}");
+            background-image: url("${./icons/lock.svg}");
             border-radius: 8px 0 0 0;
         }
 
         #hibernate {
-            background-image: url("${builtins.toString ./icons/hibernate.svg}");
+            background-image: url("${./icons/hibernate.svg}");
             border-radius: 0 0 0 8px;
         }
 
         #logout {
-            background-image: url("${builtins.toString ./icons/logout.svg}");
+            background-image: url("${./icons/logout.svg}");
         }
 
         #shutdown {
-            background-image: url("${builtins.toString ./icons/shutdown.svg}");
+            background-image: url("${./icons/shutdown.svg}");
         }
 
         #suspend {
-            background-image: url("${builtins.toString ./icons/suspend.svg}");
+            background-image: url("${./icons/suspend.svg}");
             border-radius: 0 8px 0 0;
         }
 
         #reboot {
-            background-image: url("${builtins.toString ./icons/reboot.svg}");
+            background-image: url("${./icons/reboot.svg}");
             border-radius: 0 0 8px 0;
         }
       '';
