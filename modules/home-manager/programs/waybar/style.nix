@@ -71,6 +71,7 @@
     #battery,
     #pulseaudio,
     #custom-lock,
+    #custom-vpn,
     #custom-power {
       background-color: @surface0;
       padding: 0.1rem 1rem;
@@ -128,6 +129,11 @@
     #tray {
       margin-right: 1rem;
       border-radius: 8px;
+    }
+
+    #custom-vpn {
+      border-radius: 8px;
+      color: @green;
     }
     '';
   };

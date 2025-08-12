@@ -11,7 +11,7 @@
 
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "custom/music" ];
-        modules-right = [ "pulseaudio" "battery" "clock" "tray" "custom/lock" "custom/power" ];
+        modules-right = [ "custom/vpn" "pulseaudio" "battery" "clock" "tray" "custom/lock" "custom/power" ];
 
         "hyprland/workspaces" = {
           disable-scroll = true;
@@ -35,6 +35,16 @@
           exec = "playerctl metadata --format='{{ artist }} -- {{ title }}'";
           on-click = "playerctl play-pause";
           max-length = 50;
+        };
+
+        "custom/vpn" = {
+          format = "󰖂 {}";
+          tooltip = false;
+          escape = true;
+          exec = "/home/hfv5/.local/bin/vpn/vpn-bar";
+          on-click = "/home/hfv5/.local/bin/vpn/vpn-rofi";
+          exec-on-event = "on-click";
+          interval = 1;
         };
 
         clock = {
