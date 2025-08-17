@@ -54,6 +54,10 @@
     menus.enable = true;
     icons.enable = true;
     sounds.enable = true;
+    terminal-exec = {
+      enable = true;
+      settings.default = [ "alacritty.desktop" ];
+    };
     portal = {
       enable = true;
       wlr.enable = true;
