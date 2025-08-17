@@ -9,5 +9,6 @@
     ./rofi/rofi.nix
     ./wlogout/wlogout.nix
     ./oh-my-zsh/zsh.nix
+    ./mpv/mpv.nix
   ];
 }
