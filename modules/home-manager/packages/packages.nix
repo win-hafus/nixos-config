@@ -37,6 +37,7 @@
     playerctl
     hyprpaper
     hyprpicker
+    hyprshot
     nixfmt
 
     cmake

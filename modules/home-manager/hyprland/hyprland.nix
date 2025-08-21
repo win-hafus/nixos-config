@@ -243,7 +243,7 @@
       bind = $mainMod, M, exit,
       bind = $mainMod, E, exec, $fileManager
       bind = $mainMod, P, exec, $menu
-      bind = , Print, exec, flameshot gui
+      bind = , Insert, exec, hyprshot -m region -f Pictures/Screenshots/$(date +%T-%d.%m.%Y).png
 
       # hyprlock
       bind = $mainMod, U, exec, hyprlock
