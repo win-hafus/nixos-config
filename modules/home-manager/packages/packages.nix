@@ -25,7 +25,6 @@
     qbittorrent
     telegram-desktop
     vscode
-    spotify
     obsidian
 
     flatpak
