@@ -42,10 +42,6 @@
     cmake
     cli11
 
-    dropbox-cli
-    amneziawg-tools
-    amneziawg-go
-
     python313
     python313Packages.pip
     libnotify

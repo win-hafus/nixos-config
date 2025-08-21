@@ -8,8 +8,6 @@
   services = {
     flatpak.enable = true;
     libinput.enable = true;
-    logmein-hamachi.enable = true;
-    blueman.enable = true;
     resolved.enable = true;
 
     displayManager.sddm = {

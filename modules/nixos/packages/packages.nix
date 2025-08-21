@@ -18,7 +18,6 @@
     wget
     git
     htop
-    (flameshot.override { enableWlrSupport = true; })
 
     curl
     p7zip

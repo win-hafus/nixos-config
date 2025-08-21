@@ -13,7 +13,6 @@
     ../../modules/nixos/services/services.nix
     ../../modules/nixos/network/network.nix
     ../../modules/nixos/packages/packages.nix
-    ../../modules/nixos/amneziawg/amneziawg.nix
     ../../modules/nixos/grub/grub.nix
     inputs.home-manager.nixosModules.default
     inputs.catppuccin.nixosModules.catppuccin
@@ -99,9 +98,7 @@
 
   programs = {
     xwayland.enable = true;
-    fish.enable = true;
     zsh.enable = true;
-    firefox.enable = true;
     hyprlock.enable = true;
     hyprland = {
       enable = true;
