@@ -123,8 +123,8 @@
           # https://wiki.hyprland.org/Configuring/Variables/#blur
           blur {
               enabled = true
-              size = 8
-              passes = 5
+              size = 3
+              passes = 3
 
               vibrancy = 0.1696
           }
