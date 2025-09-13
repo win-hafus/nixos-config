@@ -105,6 +105,7 @@
       xwayland.enable = true;
     };
     gamemode.enable = true;
+    java.enable = true;
 
     steam = {
       enable = true;

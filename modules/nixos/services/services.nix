@@ -13,15 +13,7 @@
     displayManager.sddm = {
       enable = true;
       wayland.enable = true;
-      package = pkgs.kdePackages.sddm;
-      theme = "catppuccin-macchiato";
-      extraPackages = [
-        (pkgs.catppuccin-sddm.override {
-          flavor = "macchiato";
-          font = "Casacdia Code";
-          fontSize = "11";
-        })
-      ];
+      theme = "catppuccin-macchiato-lavender";
     };
 
     power-profiles-daemon = {
