@@ -31,6 +31,7 @@
     })
     (catppuccin-sddm.override {
       flavor = "macchiato";
+      accent = "lavender";
       font = "Casacdia Code";
       fontSize = "11";
     })
