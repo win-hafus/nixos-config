@@ -9,22 +9,14 @@
         layer = "top";
         position = "top";
 
-        modules-left = [ "hyprland/workspaces" ];
-        modules-center = [ "custom/music" ];
-        modules-right = [ "custom/vpn" "pulseaudio" "battery" "clock" "tray" "custom/lock" "custom/power" ];
+        modules-left = [ "hyprland/workspaces" "hyprland/window" ];
+        modules-center = [ "custom/music" "clock" ];
+        modules-right = [ "tray" "network" "pulseaudio" "pulseaudio#microphone" "custom/power" ];
 
         "hyprland/workspaces" = {
           disable-scroll = true;
           sort-by-name = true;
           format = " {icon} ";
-          format-icons = {
-            default = "";
-          };
-        };
-
-        tray = {
-          icon-size = 21;
-          spacing = 10;
         };
 
         "custom/music" = {
@@ -34,7 +26,65 @@
           tooltip = false;
           exec = "playerctl metadata --format='{{ artist }} -- {{ title }}'";
           on-click = "playerctl play-pause";
-          max-length = 50;
+          max-length = 20;
+        };
+
+        clock = {
+          timezone = "Europe/Moscow";
+          format-alt = "󰥔 {:%d/%m/%Y}";
+          format = "󰥔 {:%H:%M}";
+          tooltip-format = "<tt>{calendar}</tt>";
+          calendar = {
+            mode = "month";
+            mode-mon-col = 3;
+            on-scroll = 1;
+            on-click-right = "mode";
+            format = {
+              months = "<span color='#a6adc8'><b>{}</b></span>";
+              weekdays = "<span color='#a6adc8'><b>{}</b></span>";
+              today = "<span color='#a6adc8'><b>{}</b></span>";
+              days = "<span color='#555869'><b>{}</b></span>";
+            };
+          };
+        };
+
+        tray = {
+          icon-size = 13;
+          spacing = 10;
+        };
+
+        network = {
+          tooltip = true;
+          format-wifi = "  {essid}";
+          format-ethernet = "󰈀 ";
+          tooltip-format = "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>";
+          format-linked = "󰈀 {ifname} (No IP)";
+          format-disconnected = "󰖪 ";
+          tooltip-format-disconnected = "Disconnected";
+          format-alt = " {bandwidthDownBytes}  {bandwidthUpBytes}";
+          interval = 2;
+        };
+
+        pulseaudio = {
+          format = "{icon} {volume}%";
+          format-muted = "󰖁 Muted";
+          tooltip = false;
+          format-icons = {
+            default = [ "󰕿" "󰖀" "󰕾" ];
+          };
+          on-click = "pavucontrol";
+        };
+
+        "pulseaudio#microphone" = {
+          format = "{format_source}";
+          format-source = " {volume}%";
+          format-source-muted = "  Muted";
+        };
+
+        "custom/power" = {
+          tooltip = false;
+          on-click = "wlogout &";
+          format = "󰐥";
         };
 
         "custom/vpn" = {
@@ -45,49 +95,6 @@
           on-click = "/home/hfv5/.local/bin/vpn/vpn-rofi";
           exec-on-event = "on-click";
           interval = 1;
-        };
-
-        clock = {
-          timezone = "Europe/Moscow";
-          tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-          format-alt = "󰥔 {:%d/%m/%Y}";
-          format = "󰥔 {:%H:%M}";
-        };
-
-        battery = {
-          states = {
-            warning = 30;
-            critical = 15;
-          };
-          format = "{icon}";
-          format-charging = "󱐋";
-          format-plugged = "󰚥";
-          format-alt = "{icon}";
-          format-icons = [
-            "󰂃" "󰂎" "󰁺" "󰁻" "󰁼" "󰁽"
-            "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"
-          ];
-        };
-
-        pulseaudio = {
-          format = "{icon} {volume}%";
-          format-muted = "󰖁";
-          format-icons = {
-            default = [ "󰕿" "󰖀" "󰕾" ];
-          };
-          on-click = "pavucontrol";
-        };
-
-        "custom/lock" = {
-          tooltip = false;
-          on-click = "sh -c '(sleep 0.5s; hyprlock)' & disown";
-          format = "";
-        };
-
-        "custom/power" = {
-          tooltip = false;
-          on-click = "wlogout &";
-          format = "󰐥";
         };
       };
     };
