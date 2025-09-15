@@ -3,34 +3,15 @@
   wayland.windowManager.hyprland = {
     enable = true;
     extraConfig = ''
-      # This is an example Hyprland config file.
-      # Refer to the wiki for more information.
-      # https://wiki.hyprland.org/Configuring/
-
-      # Please note not all available settings / options are set here.
-      # For a full list, see the wiki
-
-      # You can split this configuration into multiple files
-      # Create your files separately and then link them to this file like this:
-      # source = ~/.config/hypr/myColors.conf
-
-
       ################
       ### MONITORS ###
       ################
-
-      # See https://wiki.hyprland.org/Configuring/Monitors/
       monitor=HDMI-A-1,1920x1080@180,0x0,1.0
-      monitor=eDP-1,1920x1080@59.93,1920x0,1.0
 
 
       ###################
       ### MY PROGRAMS ###
       ###################
-
-      # See https://wiki.hyprland.org/Configuring/Keywords/
-
-      # Set programs that you use
       $terminal = alacritty
       $fileManager = nautilus
       $menu = rofi -show drun
@@ -39,13 +20,6 @@
       #################
       ### AUTOSTART ###
       #################
-
-      # Autostart necessary processes (like notifications daemons, status bars, etc.)
-      # Or execute your favorite apps at launch like this:
-
-      # exec-once = $terminal
-      # exec-once = nm-applet &
-      # exec-once = waybar & hyprpaper & firefox
       exec-once = hyprpaper
       exec-once = waybar
       exec-once = Telegram
@@ -53,9 +27,6 @@
       #############################
       ### ENVIRONMENT VARIABLES ###
       #############################
-
-      # See https://wiki.hyprland.org/Configuring/Environment-variables/
-
       env = XCURSOR_SIZE,16
       env = HYPRCURSOR_SIZE,16
 
@@ -63,11 +34,6 @@
       ###################
       ### PERMISSIONS ###
       ###################
-
-      # See https://wiki.hyprland.org/Configuring/Permissions/
-      # Please note permission changes here require a Hyprland restart and are not applied on-the-fly
-      # for security reasons
-
       # ecosystem {
       #   enforce_permissions = 1
       # }
@@ -81,29 +47,19 @@
       ### LOOK AND FEEL ###
       #####################
 
-      # Refer to https://wiki.hyprland.org/Configuring/Variables/
-
-      # https://wiki.hyprland.org/Configuring/Variables/#general
       general {
           gaps_in = 5
           gaps_out = 50
 
           border_size = 2
-
-          # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
           col.active_border = rgba(b7bdf8ff)
           col.inactive_border = rgba(1e1e2eaa)
-
-          # Set to true enable resizing windows by clicking and dragging on borders and gaps
           resize_on_border = true
-
-          # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
           allow_tearing = false
 
           layout = dwindle
       }
 
-      # https://wiki.hyprland.org/Configuring/Variables/#decoration
       decoration {
           rounding = 8
           rounding_power = 2
@@ -120,21 +76,18 @@
               color = rgba(00000022)
           }
 
-          # https://wiki.hyprland.org/Configuring/Variables/#blur
           blur {
               enabled = true
               size = 3
               passes = 3
+              new_optimizations = true
 
               vibrancy = 0.1696
           }
       }
 
-      # https://wiki.hyprland.org/Configuring/Variables/#animations
       animations {
           enabled = yes, please :)
-
-          # Default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
 
           bezier = easeOutQuint,0.23,1,0.32,1
           bezier = easeInOutCubic,0.65,0.05,0.36,1
@@ -143,7 +96,6 @@
           bezier = quick,0.15,0,0.1,1
 
           bezier = popup, 0.05, 0.9, 0.1, 1.05
-          bezier = pop_fast, 0.16, 1, 0.3, 1.05
           bezier = fade_out, 0.1, 0.9, 0.2, 1
 
           bezier = pop_in, 0.1, 1, 0.25, 1.1       
@@ -168,39 +120,24 @@
 
       }
 
-      # Ref https://wiki.hyprland.org/Configuring/Workspace-Rules/
-      # "Smart gaps" / "No gaps when only"
-      # uncomment all if you wish to use that.
-      # workspace = w[tv1], gapsout:0, gapsin:0
-      # workspace = f[1], gapsout:0, gapsin:0
-      # windowrule = bordersize 0, floating:0, onworkspace:w[tv1]
-      # windowrule = rounding 0, floating:0, onworkspace:w[tv1]
-      # windowrule = bordersize 0, floating:0, onworkspace:f[1]
-      # windowrule = rounding 0, floating:0, onworkspace:f[1]
-
-      # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
       dwindle {
-          pseudotile = true # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-          preserve_split = true # You probably want this
+          pseudotile = true
+          preserve_split = true
       }
 
-      # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
       master {
           new_status = master
       }
 
-      # https://wiki.hyprland.org/Configuring/Variables/#misc
       misc {
-          force_default_wallpaper = 0 # Set to 0 or 1 to disable the anime mascot wallpapers
-          disable_hyprland_logo = true # If true disables the random hyprland logo / anime girl background. :(
+          force_default_wallpaper = 0
+          disable_hyprland_logo = true
       }
-
 
       #############
       ### INPUT ###
       #############
 
-      # https://wiki.hyprland.org/Configuring/Variables/#input
       input {
           kb_layout = us,ru
           kb_variant =
@@ -210,34 +147,21 @@
 
           follow_mouse = 1
 
-          sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
+          sensitivity = 0
 
           touchpad {
               natural_scroll = true
           }
       }
-
-      # https://wiki.hyprland.org/Configuring/Variables/#gestures
       gestures {
           workspace_swipe = true
       }
 
-      # Example per-device config
-      # See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs for more
-      device {
-          name = epic-mouse-v1
-          sensitivity = -0.5
-      }
-
-
       ###################
       ### KEYBINDINGS ###
       ###################
+      $mainMod = SUPER
 
-      # See https://wiki.hyprland.org/Configuring/Keywords/
-      $mainMod = SUPER # Sets "Windows" key as main modifier
-
-      # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
       bind = $mainMod, Return, exec, $terminal
       bind = $mainMod SHIFT, C, killactive,
       bind = $mainMod, M, exit,
@@ -254,10 +178,10 @@
 
       # tyling
       bind = $mainMod, V, togglefloating,
-      bind = $mainMod, B, togglesplit, # dwindle
-      bind = $mainMod, T, pseudo, # dwindle
-      bind = $mainMod, F, fullscreen, 1 # Maximize
-      bind = $mainMod SHIFT, F, fullscreen, 0 # Fullscreen
+      bind = $mainMod, B, togglesplit,
+      bind = $mainMod, T, pseudo,
+      bind = $mainMod, F, fullscreen, 1
+      bind = $mainMod SHIFT, F, fullscreen, 0
 
       # Move focus with mainMod + arrow keys
       bind = $mainMod, H, movefocus, l
@@ -299,7 +223,7 @@
       bind = $mainMod SHIFT, 9, movetoworkspace, 9
       bind = $mainMod SHIFT, 0, movetoworkspace, 10
 
-      # Example special workspace (scratchpad)
+
       bind = $mainMod, S, togglespecialworkspace, magic
       bind = $mainMod SHIFT, S, movetoworkspace, special:magic
 
@@ -328,13 +252,6 @@
       ##############################
       ### WINDOWS AND WORKSPACES ###
       ##############################
-
-      # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
-      # See https://wiki.hyprland.org/Configuring/Workspace-Rules/ for workspace rules
-
-      # Example windowrule
-      # windowrule = float,class:^(kitty)$,title:^(kitty)$
-
       layerrule = animation slide,notifications
       layerrule = blur,notifications
       layerrule = ignorezero,notifications
