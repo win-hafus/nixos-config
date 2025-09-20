@@ -13,6 +13,7 @@
     displayManager.sddm = {
       enable = true;
       wayland.enable = true;
+      package = pkgs.kdePackages.sddm;
       theme = "catppuccin-macchiato-lavender";
     };
 
