@@ -16,17 +16,15 @@
         "hyprland/workspaces" = {
           disable-scroll = true;
           sort-by-name = true;
-          format = " {icon} ";
         };
 
         "custom/music" = {
           format = "󰎇 {}";
           escape = true;
           interval = 5;
-          tooltip = false;
-          exec = "playerctl metadata --format='{{ artist }} -- {{ title }}'";
+          exec = "playerctl metadata --format='{{ title }} -- {{ artist }}'";
           on-click = "playerctl play-pause";
-          max-length = 20;
+          max-length = 50;
         };
 
         clock = {

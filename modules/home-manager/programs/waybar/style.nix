@@ -3,8 +3,7 @@
   enable = true;
   style = ''
     * {
-        border: none;
-        border-radius: 0;
+        border-radius: 10px;
         font-family: JetBrainsMono Nerd Font, monospace;
         font-weight: bold;
         font-size: 14px;
@@ -50,6 +49,8 @@
         padding: 0px 10px;
         margin: 3px 0px;
         margin-top: 5px;
+        border-radius: 0;
+        border: none;
     }
 
     #tray {
