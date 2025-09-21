@@ -4,7 +4,7 @@
     enable = true;
     settings = {
       background = {
-        path = "${builtins.toString ./wallpaper.png}";
+        path = "${./wallpaper.png}";
         blur_passes = 3;
         blur_size = 1;
         contrast = 0.8916;
@@ -20,13 +20,13 @@
       };
 
       animations = {
-        enabled = false;
+        enabled = true;
       };
       label = [
         # Time
         {
           text = "cmd[update:1000] echo \"$(date '+%I:%M%p')\"";
-          color = "rgb(110, 154, 65)";
+          color = "rgb(125, 196, 228)";
           font_size = 120;
           font_family = "Fira Code Bold";
           position = "0, -140";
@@ -37,7 +37,7 @@
         # Date
         {
           text = "cmd[update:1000] echo \"<span>$(date '+%A, %d %B')</span>\"";
-          color = "rgba(225, 225, 225, 0.75)";
+          color = "rgba(138, 173, 244, 0.75)";
           font_size = 30;
           font_family = "Fira Code";
           position = "0, 200";
@@ -50,7 +50,6 @@
           text = "";
           color = "rgba(225, 225, 225, 0.65)";
           font_size = 120;
-          position = "0, 60";
           halign = "center";
           valign = "center";
         }
@@ -59,7 +58,7 @@
         {
           text = "Hello, $USER";
           color = "rgba(255, 255, 255, 0.65)";
-          position = "0, -70";
+          position = "0, -180";
           font_size = 25;
           font_family = "Fira Code Bold";
           halign = "center";
@@ -89,13 +88,13 @@
         dots_spacing = 0.2;
         dots_center = true;
         outer_color = "rgba(0, 0, 0, 0)";
-        inner_color = "rgba(60, 56, 54, 0.35)";
+        inner_color = "rgb(36, 39, 58)";
         font_color = "rgb(200, 200, 200)";
         font_family = "Cascadia Code Italic";
         fade_on_empty = false;
         placeholder_text = ''<i><span foreground="##ffffff99">Use Me</span></i>'';
         hide_input = false;
-        position = "0, -140";
+        position = "0, -250";
         halign = "center";
         valign = "center";
       };
