@@ -58,5 +58,43 @@
             border-radius: 0 0 8px 0;
         }
       '';
+   layout = [
+        {
+            "label" = "lock";
+            "action" = "hyprlock";
+            "text" = "Lock";
+            "keybind" = "l";
+        }
+        {
+            "label" = "suspend";
+            "action" = "systemctl suspend-then-hibernate";
+            "text" = "Suspend";
+            "keybind" = "u";
+        }
+        {
+            "label" = "logout";
+            "action" = "hyprctl dispatch exit";
+            "text" = "Logout";
+            "keybind" = "e";
+        }
+        {
+            "label" = "shutdown";
+            "action" = "systemctl poweroff";
+            "text" = "Shutdown";
+            "keybind" = "s";
+        }
+        {
+            "label" = "hibernate";
+            "action" = "systemctl hibernate";
+            "text" = "Hibernate";
+            "keybind" = "h";
+        }
+        {
+            "label" = "reboot";
+            "action" = "systemctl reboot";
+            "text" = "Reboot";
+            "keybind" = "r";
+        }
+    ];
   };  
 }
