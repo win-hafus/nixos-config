@@ -53,7 +53,7 @@
 
           border_size = 2
           col.active_border = rgba(b7bdf8ff)
-          col.inactive_border = rgba(1e1e2eaa)
+          col.inactive_border = rgba(1e1e2e00)
           resize_on_border = true
           allow_tearing = false
 
