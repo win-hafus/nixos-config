@@ -48,7 +48,7 @@
         # Login Picture
         {
           text = "";
-          color = "rgba(225, 225, 225, 0.65)";
+          color = "rgb(202, 211, 245)";
           font_size = 120;
           halign = "center";
           valign = "center";
@@ -57,8 +57,8 @@
         # Greeting user
         {
           text = "Hello, $USER";
-          color = "rgba(255, 255, 255, 0.65)";
-          position = "0, -180";
+          color = "rgb(202, 211, 245)";
+          position = "0, -190";
           font_size = 25;
           font_family = "Fira Code Bold";
           halign = "center";
@@ -88,8 +88,8 @@
         dots_spacing = 0.2;
         dots_center = true;
         outer_color = "rgba(0, 0, 0, 0)";
-        inner_color = "rgb(36, 39, 58)";
-        font_color = "rgb(200, 200, 200)";
+        inner_color = "rgba(36, 39, 58, 0.35)";
+        font_color = "rgb(202, 211, 245)";
         font_family = "Cascadia Code Italic";
         fade_on_empty = false;
         placeholder_text = ''<i><span foreground="##ffffff99">Use Me</span></i>'';
