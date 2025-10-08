@@ -19,6 +19,12 @@
       options = [ "subvol=@" ];
     };
 
+  fileSystems."/home/hfv5/mnt" =
+  { device = "/dev/disk/by-uuid/23f01c8e-bda1-4bbe-a5f2-e439b914a10a";
+    fsType = "btrfs";
+    options = [ "nofail" ];
+  };
+
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/03C4-7281";
       fsType = "vfat";
@@ -42,11 +48,11 @@
 
   hardware.graphics.extraPackages = [
     pkgs.rocmPackages.clr.icd
-    pkgs.amdvlk
+    # pkgs.amdvlk
   ];
 
   # To enable Vulkan support for 32-bit applications, also add:
-  hardware.graphics.extraPackages32 = [
-    pkgs.driversi686Linux.amdvlk
-  ];
+  # hardware.graphics.extraPackages32 = [
+  #   pkgs.driversi686Linux.amdvlk
+  # ];
 }
