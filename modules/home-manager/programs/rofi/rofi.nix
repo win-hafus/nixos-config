@@ -9,7 +9,7 @@
 
   programs.rofi = {
     enable = true;
-    package = pkgs.rofi-wayland;
+    package = pkgs.rofi;
     font = "Cascadia Code 9";
 
     extraConfig = {
