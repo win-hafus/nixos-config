@@ -153,9 +153,9 @@
               natural_scroll = true
           }
       }
-      gestures {
-          workspace_swipe = true
-      }
+      # gestures {
+          # workspace_swipe = true
+      # }
 
       ###################
       ### KEYBINDINGS ###
