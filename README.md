@@ -23,7 +23,7 @@ My personal NixOS configuration featuring:
 
 ### User Environment
 - **Window Manager:** [Hyprland](https://github.com/hyprwm/Hyprland) (available through SDDM boot menu)
-- **Application Launcher:** Rofi (Wayland version)
+- **Application Launcher:** Rofi
 - **Status Bar:** Waybar
 - **Terminal:** Alacritty
 - **Shell:** Zsh with Oh My Zsh framework
@@ -63,6 +63,9 @@ git clone https://github.com/win-hafus/nixos-config
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zapret-flake = {
+      url = "github:aca/zapret-flake.nix";
+    };
   };
 
   outputs =
@@ -74,6 +77,7 @@ git clone https://github.com/win-hafus/nixos-config
       catppuccin,
       zen-browser,
       spicetify-nix,
+      zapret-flake,
     }@inputs:
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -114,7 +118,6 @@ git clone https://github.com/win-hafus/nixos-config
 
 ## Notes
 1. Replace all instances of `${username}` with your actual username
-3. Wallpapers are managed through SWWW - configure in `home.nix`
 
 ## References
 - [Hyprland Compositor](https://github.com/hyprwm/Hyprland) 
