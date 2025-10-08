@@ -17,7 +17,7 @@
     rofi
     wlogout
     reaper
-    reaper-sws-extension
+    # reaper-sws-extension
     # discord
     pavucontrol
     nautilus
