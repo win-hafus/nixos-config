@@ -12,6 +12,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zapret-flake = {
+      url = "github:aca/zapret-flake.nix";
+    };
   };
 
   outputs =
@@ -23,6 +26,7 @@
       catppuccin,
       zen-browser,
       spicetify-nix,
+      zapret-flake,
     }@inputs:
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
