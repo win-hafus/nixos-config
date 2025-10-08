@@ -18,7 +18,7 @@
     wlogout
     reaper
     # reaper-sws-extension
-    # discord
+    discord
     pavucontrol
     nautilus
     obs-studio
