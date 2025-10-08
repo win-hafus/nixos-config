@@ -14,7 +14,7 @@
     vlc
     imv
     mpv
-    rofi-wayland
+    rofi
     wlogout
     reaper
     reaper-sws-extension
