@@ -101,6 +101,8 @@
     xwayland.enable = true;
     zsh.enable = true;
     hyprlock.enable = true;
+    amnezia-vpn.enable = true;
+    coolercontrol.enable = true;
     hyprland = {
       enable = true;
       xwayland.enable = true;
