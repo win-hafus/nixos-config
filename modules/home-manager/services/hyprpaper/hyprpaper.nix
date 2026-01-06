@@ -4,8 +4,8 @@
     settings = {
       ipc = "on";
       splash = false;
-      preload = [ "${./wanderer.jpg}" ];
-      wallpaper = [ ",${./wanderer.jpg}" ];
+      preload = [ "${./black-variant.png}" "${./wanderer.jpg}" ];
+      wallpaper = [ ",${./black-variant.png}" ];
     };
 
   };
