@@ -45,4 +45,23 @@
     glfw
     mesa
   ];
+
+  environment.gnome.excludePackages = with pkgs; [
+    gnome-tour
+    gnome-console
+    gnome-online-accounts
+    gnome-music
+    gnome-user-docs
+    gnome-remote-desktop
+    gnome-weather
+    gnome-text-editor
+    gnome-color-manager
+    gnome-calculator
+    gnome-contacts
+    gnome-maps
+    gnome-connections
+    gnome-disk-utility
+  ];
+
+  services.desktopManager.gnome.enable = true;
 }
