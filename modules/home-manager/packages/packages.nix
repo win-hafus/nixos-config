@@ -26,6 +26,10 @@
     telegram-desktop
     vscode
     obsidian
+    libreoffice-qt
+
+    hunspell
+    hunspellDicts.ru_RU
 
     flatpak
 
