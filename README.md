@@ -47,77 +47,14 @@ git clone https://github.com/win-hafus/nixos-config
 2. Import desired modules into your configuration
 3. Ensure all inputs are declared in your `flake.nix`
 
-## Flake Inputs
-```nix
-{
-  inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
-    catppuccin.url = "github:catppuccin/nix";
-    minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    zapret-flake = {
-      url = "github:aca/zapret-flake.nix";
-    };
-  };
-
-  outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      minegrub-world-sel-theme,
-      catppuccin,
-      zen-browser,
-      spicetify-nix,
-      zapret-flake,
-    }@inputs:
-    {
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/default/configuration.nix
-          catppuccin.nixosModules.catppuccin
-          home-manager.nixosModules.home-manager
-          minegrub-world-sel-theme.nixosModules.default
-          spicetify-nix.nixosModules.default
-          {
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.hfv5 = {
-              imports = [
-                ./hosts/default/home.nix
-                catppuccin.homeModules.catppuccin
-                spicetify-nix.homeManagerModules.default
-              ];
-            };
-          }
-        ];
-      };
-    };
-}
-```
-
 ## Features
 - Automatic Home Manager build from system configuration
 - Shared packages between NixOS and Home Manager
-- `${username}` variables for easy customization
 - Catppuccin theming for:
   - GTK applications
   - SDDM login manager
   - Terminal tools (via catppuccin-nix)
-- Dual desktop environment support:
-  - Default: Hyprland
-
-## Notes
-1. Replace all instances of `${username}` with your actual username
+- Dual desktop environment support: Hyprland and Gnome
 
 ## References
 - [Hyprland Compositor](https://github.com/hyprwm/Hyprland) 
