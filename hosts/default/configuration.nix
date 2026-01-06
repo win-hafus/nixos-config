@@ -100,7 +100,6 @@
   programs = {
     xwayland.enable = true;
     zsh.enable = true;
-    hyprlock.enable = true;
     amnezia-vpn.enable = true;
     coolercontrol.enable = true;
     hyprland = {
