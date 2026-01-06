@@ -1,50 +1,46 @@
 {
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    catppuccin.url = "github:catppuccin/nix";
-    minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    zapret-flake = {
-      url = "github:aca/zapret-flake.nix";
+
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    catppuccin.url = "github:catppuccin/nix";
+    minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    zapret-flake.url = "github:aca/zapret-flake.nix";
+
   };
 
   outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      minegrub-world-sel-theme,
-      catppuccin,
-      zen-browser,
-      spicetify-nix,
-      zapret-flake,
-    }@inputs:
+    { self, nixpkgs, ... }@inputs:
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         specialArgs = { inherit inputs; };
+
         modules = [
+          { nixpkgs.hostPlatform = "x86_64-linux"; }
           ./hosts/default/configuration.nix
-          catppuccin.nixosModules.catppuccin
-          home-manager.nixosModules.home-manager
-          minegrub-world-sel-theme.nixosModules.default
-          spicetify-nix.nixosModules.default
+
+          inputs.catppuccin.nixosModules.catppuccin
+          inputs.minegrub-world-sel-theme.nixosModules.default
+          inputs.spicetify-nix.nixosModules.default
+          inputs.home-manager.nixosModules.home-manager
+
           {
             home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.hfv5 = {
               imports = [
                 ./hosts/default/home.nix
-                catppuccin.homeModules.catppuccin
-                spicetify-nix.homeManagerModules.default
+                inputs.catppuccin.homeModules.catppuccin
+                inputs.spicetify-nix.homeManagerModules.default
               ];
             };
           }
