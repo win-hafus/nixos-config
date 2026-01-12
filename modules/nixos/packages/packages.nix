@@ -24,6 +24,7 @@
     unzip
     zip
     jq
+    ffmpeg
 
     (catppuccin-kvantum.override {
       accent = "lavender";
