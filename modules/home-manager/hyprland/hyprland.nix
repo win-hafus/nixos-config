@@ -254,22 +254,23 @@
       ##############################
       ### WINDOWS AND WORKSPACES ###
       ##############################
-      layerrule = animation slide,notifications
-      layerrule = blur,notifications
-      layerrule = ignorezero,notifications
+      layerrulev2 = animation slide, layer:notifications
+      layerrulev2 = blur, layer:notifications
+      layerrulev2 = ignorezero, layer:notifications
 
-      windowrule = float,class:^(imv)$
-      windowrule = float,class:^(mpv)$
-      windowrule = float,class:^(vlc)$
-      windowrule = center,class:^(imv)$
-      windowrule = center,class:^(mpv)$
-      windowrule = center,class:^(vlc)$
+      windowrulev2 = float, class:^(imv)$
+      windowrulev2 = float, class:^(mpv)$
+      windowrulev2 = float, class:^(vlc)$
+
+      windowrulev2 = center, class:^(imv)$
+      windowrulev2 = center, class:^(mpv)$
+      windowrulev2 = center, class:^(vlc)$
 
       # Ignore maximize requests from apps. You'll probably like this.
-      windowrule = suppressevent maximize, class:.*
+      windowrulev2 = suppressevent maximize, class:.*
 
       # Fix some dragging issues with XWayland
-      windowrule = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0
+      windowrulev2 = nofocus, class:^$, title:^$, xwayland:1, floating:1, fullscreen:0, pinned:0
     '';
   };
 }
