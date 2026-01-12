@@ -11,6 +11,7 @@
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
@@ -48,11 +49,5 @@
 
   hardware.graphics.extraPackages = [
     pkgs.rocmPackages.clr.icd
-    # pkgs.amdvlk
   ];
-
-  # To enable Vulkan support for 32-bit applications, also add:
-  # hardware.graphics.extraPackages32 = [
-  #   pkgs.driversi686Linux.amdvlk
-  # ];
 }
