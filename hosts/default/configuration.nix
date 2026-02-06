@@ -60,7 +60,7 @@
     portal = {
       enable = true;
       wlr.enable = true;
-      xdgOpenUsePortal = false;
+      xdgOpenUsePortal = true;
       extraPortals = [
         pkgs.xdg-desktop-portal-hyprland
         pkgs.xdg-desktop-portal-gnome
@@ -102,6 +102,7 @@
     zsh.enable = true;
     amnezia-vpn.enable = true;
     coolercontrol.enable = true;
+    kdeconnect.enable = true;
     hyprland = {
       enable = true;
       xwayland.enable = true;
@@ -129,5 +130,5 @@
 
   security.rtkit.enable = true;
 
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
 }
