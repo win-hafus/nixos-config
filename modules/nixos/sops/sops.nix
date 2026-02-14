@@ -1,9 +1,15 @@
-{ config, pkgs, self, ... }: {
+{
+  config,
+  pkgs,
+  self,
+  ...
+}:
+{
   sops = {
-    defaultSopsFile = "${self}/secrets.yaml"; # Путь к файлу из Шага 3
+    defaultSopsFile = "${self}/secrets.yaml";
     validateSopsFiles = false;
     age = {
-      sshKeyPaths = [ 
+      sshKeyPaths = [
         "/etc/ssh/ssh_host_ed25519_key"
         "/etc/ssh/ssh_host_rsa_key"
       ];

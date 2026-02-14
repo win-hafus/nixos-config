@@ -25,7 +25,10 @@
     { self, nixpkgs, ... }@inputs:
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; inherit self; };
+        specialArgs = {
+          inherit inputs;
+          inherit self;
+        };
 
         modules = [
           { nixpkgs.hostPlatform = "x86_64-linux"; }
