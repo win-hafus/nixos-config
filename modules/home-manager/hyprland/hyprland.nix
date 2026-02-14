@@ -20,9 +20,11 @@
       #################
       ### AUTOSTART ###
       #################
-      exec-once = hyprpaper
-      exec-once = waybar
-      exec-once = Telegram
+      # exec-once = sleep 2 && hyprpaper
+      exec-once = waybar &
+      exec-once = Telegram &
+      exec-once = discord &
+      exec-once = swww-daemon &
 
       #############################
       ### ENVIRONMENT VARIABLES ###

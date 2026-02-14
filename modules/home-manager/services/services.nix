@@ -1,6 +1,6 @@
 {
   imports = [
-    ./hyprpaper/hyprpaper.nix
+    # ./hyprpaper/hyprpaper.nix
     ./mako/mako.nix
   ];
 }

@@ -39,7 +39,8 @@
     curl
     p7zip
     playerctl
-    hyprpaper
+    # hyprpaper
+    swww
     hyprpicker
     hyprshot
     nixfmt
