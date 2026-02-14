@@ -12,7 +12,7 @@
     gvfs.enable = true;
     zapret-discord-youtube = {
       enable = true;
-      config = "general(ALT)";
+      configName = "general(ALT)";
     };
 
     displayManager.sddm = {
