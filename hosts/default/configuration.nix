@@ -14,6 +14,7 @@
     ../../modules/nixos/network/network.nix
     ../../modules/nixos/packages/packages.nix
     ../../modules/nixos/grub/grub.nix
+    ../../modules/nixos/sops/sops.nix
     inputs.home-manager.nixosModules.default
     inputs.catppuccin.nixosModules.catppuccin
   ];

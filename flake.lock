@@ -144,6 +144,22 @@
     },
     "nixpkgs_4": {
       "locked": {
+        "lastModified": 1770380644,
+        "narHash": "sha256-P7dWMHRUWG5m4G+06jDyThXO7kwSk46C1kgjEWcybkE=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "ae67888ff7ef9dff69b3cf0cc0fbfbcd3a722abe",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_5": {
+      "locked": {
         "lastModified": 1769018530,
         "narHash": "sha256-MJ27Cy2NtBEV5tsK+YraYr2g851f3Fl1LpNHDzDX15c=",
         "owner": "NixOS",
@@ -158,7 +174,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_5": {
+    "nixpkgs_6": {
       "locked": {
         "lastModified": 1770562336,
         "narHash": "sha256-ub1gpAONMFsT/GU2hV6ZWJjur8rJ6kKxdm9IlCT0j84=",
@@ -174,37 +190,39 @@
         "type": "github"
       }
     },
-    "nixpkgs_6": {
-      "locked": {
-        "lastModified": 1716044191,
-        "narHash": "sha256-V/JRCf9iOKGMmmMCs/K1n+vOP01Y7ZPJntHXxDEvzWM=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "fdfdc52e33e11634eb7b37f65e96e63d1beb7e45",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "master",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "catppuccin": "catppuccin",
         "home-manager": "home-manager",
         "minegrub-world-sel-theme": "minegrub-world-sel-theme",
         "nixpkgs": "nixpkgs_3",
+        "sops-nix": "sops-nix",
         "spicetify-nix": "spicetify-nix",
         "zapret-discord-youtube": "zapret-discord-youtube",
-        "zapret-flake": "zapret-flake",
         "zen-browser": "zen-browser"
+      }
+    },
+    "sops-nix": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_4"
+      },
+      "locked": {
+        "lastModified": 1770683991,
+        "narHash": "sha256-xVfPvXDf9QN3Eh9dV+Lw6IkWG42KSuQ1u2260HKvpnc=",
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "rev": "8b89f44c2cc4581e402111d928869fe7ba9f7033",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "type": "github"
       }
     },
     "spicetify-nix": {
       "inputs": {
-        "nixpkgs": "nixpkgs_4",
+        "nixpkgs": "nixpkgs_5",
         "systems": "systems"
       },
       "locked": {
@@ -254,7 +272,7 @@
     "zapret-discord-youtube": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs_5",
+        "nixpkgs": "nixpkgs_6",
         "zapret-flowseal": "zapret-flowseal"
       },
       "locked": {
@@ -271,25 +289,6 @@
         "type": "github"
       }
     },
-    "zapret-flake": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_6",
-        "zapret-src": "zapret-src"
-      },
-      "locked": {
-        "lastModified": 1724497256,
-        "narHash": "sha256-wLOTVuN2d8tHAe69Dq4oAbOEyuIAAlNcdB0fmud+LSo=",
-        "owner": "aca",
-        "repo": "zapret-flake.nix",
-        "rev": "a713abab46b70dd198130ad3759baf0b7af48b2c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "aca",
-        "repo": "zapret-flake.nix",
-        "type": "github"
-      }
-    },
     "zapret-flowseal": {
       "flake": false,
       "locked": {
@@ -303,22 +302,6 @@
       "original": {
         "owner": "Flowseal",
         "repo": "zapret-discord-youtube",
-        "type": "github"
-      }
-    },
-    "zapret-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1724486371,
-        "narHash": "sha256-wnjRnUhdPBHrrk+LwhEbmKm1OyfwcLCbf2H4morw5vY=",
-        "owner": "bol-van",
-        "repo": "zapret",
-        "rev": "faea968cd4ab24887236051ad4bcbbd0a824c734",
-        "type": "github"
-      },
-      "original": {
-        "owner": "bol-van",
-        "repo": "zapret",
         "type": "github"
       }
     },
