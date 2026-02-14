@@ -10,21 +10,10 @@
     libinput.enable = true;
     resolved.enable = true;
     gvfs.enable = true;
-    zapret = {
+    zapret-discord-youtube = {
       enable = true;
-      params = [
-        "--dpi-desync=fake,multidisorder"
-        "--dpi-desync-ttl=1"
-        "--dpi-desync-autottl=-2"
-        "--dpi-desync-split-pos=midsld"
-      ];
-      blacklist = [
-        "www.gosuslugi.ru"
-        "chatgpt.com"
-        "www.notabenoid.org"
-        "gorzdrav.spb.ru"
-      ];
-     };
+      config = "general(ALT)";
+    };
 
     displayManager.sddm = {
       enable = true;

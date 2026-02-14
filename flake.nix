@@ -16,6 +16,7 @@
     minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     zapret-flake.url = "github:aca/zapret-flake.nix";
+    zapret-discord-youtube.url = "github:kartavkun/zapret-discord-youtube";
 
   };
 
@@ -33,6 +34,7 @@
           inputs.minegrub-world-sel-theme.nixosModules.default
           inputs.spicetify-nix.nixosModules.default
           inputs.home-manager.nixosModules.home-manager
+          inputs.zapret-discord-youtube.nixosModules.default
 
           {
             home-manager.extraSpecialArgs = { inherit inputs; };
