@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       layer = "overlay";
-      background-color = "#24273a80";
+      background-color = "#24273a";
       text-color = "#cad3f5";
       border-color = "#a6e3a1";
       progress-color = "over #363a4f";
