@@ -15,8 +15,9 @@
     catppuccin.url = "github:catppuccin/nix";
     minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    zapret-flake.url = "github:aca/zapret-flake.nix";
+
     zapret-discord-youtube.url = "github:kartavkun/zapret-discord-youtube";
+    sops-nix.url = "github:Mic92/sops-nix";
 
   };
 
@@ -24,17 +25,18 @@
     { self, nixpkgs, ... }@inputs:
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs; inherit self; };
 
         modules = [
           { nixpkgs.hostPlatform = "x86_64-linux"; }
           ./hosts/default/configuration.nix
-
+          inputs.home-manager.nixosModules.home-manager
           inputs.catppuccin.nixosModules.catppuccin
+
           inputs.minegrub-world-sel-theme.nixosModules.default
           inputs.spicetify-nix.nixosModules.default
-          inputs.home-manager.nixosModules.home-manager
           inputs.zapret-discord-youtube.nixosModules.default
+          inputs.sops-nix.nixosModules.sops
 
           {
             home-manager.extraSpecialArgs = { inherit inputs; };
