@@ -25,6 +25,8 @@
     zip
     jq
     ffmpeg
+    sops
+    age
 
     (catppuccin-kvantum.override {
       accent = "lavender";

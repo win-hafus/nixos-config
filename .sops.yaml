@@ -1,0 +1,4 @@
+
+creation_rules:
+  - path_override: secrets.yaml
+    age: age1vlsa9ccfjr27xwgfal43d9tyx6hww6xnehd6v9gesxtjvt2v7aasrfczj3
