@@ -16,7 +16,17 @@ My personal NixOS configuration with a focus on modularity, reproducibility, and
 
 ## 📸 Screenshots
 
-> *Screenshots coming soon*
+### Hyprland:
+<p align="center">
+  <img width="49%" src="https://github.com/user-attachments/assets/fa6b06a9-3815-456e-b427-d3dfa721e8b1" />
+  <img width="49%" src="https://github.com/user-attachments/assets/7e74d589-a5ed-4cc5-8749-d3e7e5c69185" />
+  <br>
+  <img width="98%" src="https://github.com/user-attachments/assets/ac0eb7fa-43aa-411b-bab4-69d44e3c1fed" />
+</p>
+
+
+### Gnome:
+> *later
 
 ## 🗂️ Project Structure
 
@@ -25,7 +35,7 @@ My personal NixOS configuration with a focus on modularity, reproducibility, and
 ├── flake.nix              # Main entry point
 ├── flake.lock
 ├── hosts/                 # Host-specific configurations
-│   └── hfv5/           # Default host configuration
+│   └── default/           # Default host configuration
 ├── modules/               # Reusable modules
 │   ├── nixos/            # System-level modules (NixOS)
 │   └── home-manager/     # User-level modules (Home Manager)
@@ -41,7 +51,7 @@ My personal NixOS configuration with a focus on modularity, reproducibility, and
 |-----------|-------|
 | **Display Manager** | SDDM with Catppuccin theme |
 | **Desktop Environment** | GNOME + Hyprland (your choice) |
-| **Wallpaper Engine** | HyprPaper |
+| **Wallpaper Engine** | SWWW |
 | **Theme** | Catppuccin Macchiato Lavender |
 
 ### User Environment
@@ -79,14 +89,10 @@ sudo git clone https://github.com/win-hafus/nixos-config /etc/nixos
 
 # Navigate to the directory
 cd /etc/nixos
+make install
 
-# Configure for your system
-# 1. Edit hosts/default/configuration.nix
-# 2. Set your username
-# 3. Configure parameters in modules/nixos/core.nix
-
-# Apply the configuration (replace 'hfv5' with your hostname)
-sudo nixos-rebuild switch --flake /etc/nixos#hfv5
+# Apply the configuration
+make switch
 ```
 
 ### Option 2: Integration with Existing Configuration
@@ -106,46 +112,31 @@ imports = [ inputs.my-config.nixosModules.default ];
 
 ## ⚙️ Configuration
 
-### Changing Username
+### Changing Username and Hostname
 
-Edit `hosts/default/configuration.nix`:
-
-```nix
-users.users.your-name = {
-  isNormalUser = true;
-  extraGroups = [ "wheel" "networkmanager" ];
-};
-```
-
-### Changing Hostname
-
-In `flake.nix`, replace `hfv5` with your desired hostname:
+Edit `flake.nix`:
 
 ```nix
-nixosConfigurations.your-hostname = nixpkgs.lib.nixosSystem {
-  # ...
-};
+...
+let
+      username = "hfv5";
+      hostname = "nixos";
+    in {
+...
 ```
-
 
 ## 🔄 Updating
 
 ```bash
 # Update flake inputs
-nix flake update
+make update-flake
 
 # Apply updates
-sudo nixos-rebuild switch --flake /etc/nixos#hfv5
+make switch
 
 # Clean old generations (optional)
-sudo nix-collect-garbage -d
+make gc-old
 ```
-## 🎯 Roadmap
-
-- [ ] Add desktop screenshots
-- [ ] Set up CI/CD for automatic checks
-- [ ] Add module documentation
-- [ ] Create overlays for custom packages
 
 ## 📚 Useful Resources
 
