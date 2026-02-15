@@ -69,6 +69,7 @@
                 ./hosts/default/home.nix
                 inputs.catppuccin.homeModules.catppuccin
                 inputs.spicetify-nix.homeManagerModules.default
+                inputs.sops-nix.homeManagerModules.sops
               ];
             };
           }

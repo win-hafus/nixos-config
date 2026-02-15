@@ -1,10 +1,8 @@
 keys:
-  - &host age1x9s5527ghndlmjshulcxf7325pnf5knp8wldzdj4f2mvpn4e533qxwzzex
-  - &user age1exfacum7j8t9e326xlnl506fr7d0uq3uhsu3pad40jmxyr6c3azsg0e6ju
+  - &host age1vlsa9ccfjr27xwgfal43d9tyx6hww6xnehd6v9gesxtjvt2v7aasrfczj3
 
 creation_rules:
   - path_override: secrets.yaml
     key_groups:
       - age:
           - *host
-          - *user

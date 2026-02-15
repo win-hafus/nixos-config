@@ -1,13 +1,11 @@
 # ./modules/home-manager/sops/sops.nix
-{ config, pkgs, ... }:
+{ config, pkgs, self, ... }:
 {
   sops = {
-    defaultSopsFile = ../../secrets.yaml;
+    defaultSopsFile = ../../../secrets.yaml;
     validateSopsFiles = false;
-    age.keyFile = "/var/lib/sops-nix/keys.txt";
+    age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
     
-    secrets.wakatime-key = {
-      path = "%r/wakatime-key";
-    };
+    secrets.wakatime-key = {};
   };
 }
