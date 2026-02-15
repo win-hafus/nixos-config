@@ -1,4 +1,13 @@
 {
+  nixConfig = {
+    extra-substituters = [
+      "https://nixos-config-cache-hfv5.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "nixos-config-cache-hfv5.cachix.org-1:h8ptySxiX2eztliDPG0Y6PadJM0fAPDY27RQ1rfWRbA="
+    ];
+  };
+  
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
@@ -26,14 +35,20 @@
     let
       username = "hfv5";
       hostname = "nixos";
-    in {
+    in
+    {
       lib = {
         inherit username hostname;
       };
-      
+
       nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit inputs self username hostname;
+          inherit
+            inputs
+            self
+            username
+            hostname
+            ;
         };
 
         modules = [
@@ -49,7 +64,7 @@
 
           {
             home-manager.extraSpecialArgs = { inherit inputs username hostname; };
-            home-manager.users.${username} ={
+            home-manager.users.${username} = {
               imports = [
                 ./hosts/default/home.nix
                 inputs.catppuccin.homeModules.catppuccin
