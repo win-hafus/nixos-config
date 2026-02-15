@@ -1,4 +1,4 @@
-# 🐧 NixOS Configuration
+# NixOS Configuration
 
 [![NixOS](https://img.shields.io/badge/NixOS-unstable-blue.svg?style=flat&logo=nixos&logoColor=white)](https://nixos.org)
 [![Flakes](https://img.shields.io/badge/Nix-Flakes-informational.svg?style=flat&logo=nixos&logoColor=white)](https://nixos.wiki/wiki/Flakes)
@@ -6,7 +6,7 @@
 
 My personal NixOS configuration with a focus on modularity, reproducibility, and aesthetics.
 
-## ✨ Features
+## Features
 
 - 🔄 **Flakes** — fully reproducible builds
 - 🏠 **Home Manager** — declarative user environment management
@@ -23,14 +23,14 @@ My personal NixOS configuration with a focus on modularity, reproducibility, and
 ```
 .
 ├── flake.nix              # Main entry point
-├── flake.lock             # Pinned dependency versions
+├── flake.lock
 ├── hosts/                 # Host-specific configurations
-│   └── default/           # Default host configuration
+│   └── hfv5/           # Default host configuration
 ├── modules/               # Reusable modules
 │   ├── nixos/            # System-level modules (NixOS)
 │   └── home-manager/     # User-level modules (Home Manager)
-├── LICENSE               # MIT License
-└── README.md            # This file
+├── LICENSE
+└── README.md
 ```
 
 ## 🎨 System Components
@@ -103,17 +103,6 @@ inputs.my-config.url = "github:win-hafus/nixos-config";
 imports = [ inputs.my-config.nixosModules.default ];
 ```
 
-### Option 3: Quick Testing in VM
-
-```bash
-# Clone the repository
-git clone https://github.com/win-hafus/nixos-config
-cd nixos-config
-
-# Build and run virtual machine
-nixos-rebuild build-vm --flake .#hfv5
-./result/bin/run-hfv5-vm
-```
 
 ## ⚙️ Configuration
 
@@ -138,23 +127,6 @@ nixosConfigurations.your-hostname = nixpkgs.lib.nixosSystem {
 };
 ```
 
-### Adding New Packages
-
-**System packages** (available to all users):
-```nix
-# modules/nixos/core.nix
-environment.systemPackages = with pkgs; [
-  # add packages here
-];
-```
-
-**User packages** (only for your user):
-```nix
-# modules/home-manager/*.nix
-home.packages = with pkgs; [
-  # add packages here
-];
-```
 
 ## 🔄 Updating
 
@@ -168,28 +140,10 @@ sudo nixos-rebuild switch --flake /etc/nixos#hfv5
 # Clean old generations (optional)
 sudo nix-collect-garbage -d
 ```
-
-## 🔙 Rolling Back
-
-If something goes wrong, you can always roll back:
-
-```bash
-# List available generations
-sudo nix-env --list-generations --profile /nix/var/nix/profiles/system
-
-# Roll back to previous generation
-sudo nixos-rebuild switch --rollback
-
-# Or select a specific generation at boot via GRUB
-```
-
 ## 🎯 Roadmap
 
 - [ ] Add desktop screenshots
-- [ ] Create profiles (minimal, desktop, development)
-- [ ] Add secrets management (sops-nix or agenix)
 - [ ] Set up CI/CD for automatic checks
-- [ ] Split hosts into separate machines
 - [ ] Add module documentation
 - [ ] Create overlays for custom packages
 
