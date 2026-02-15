@@ -16,11 +16,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       
-      # Заменили установщик на DeterminateSystems (без упоминания cachix)
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@v16
       
-      # Добавляем бесплатный кэш, чтобы сборка не длилась вечность
       - name: Setup Magic Nix Cache
         uses: DeterminateSystems/magic-nix-cache-action@v8
 
