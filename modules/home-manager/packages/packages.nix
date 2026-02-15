@@ -25,6 +25,7 @@
     qbittorrent
     telegram-desktop
     vscode
+    wakatime-cli
     obsidian
     libreoffice-qt
 
