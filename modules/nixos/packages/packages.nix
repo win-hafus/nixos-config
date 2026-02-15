@@ -27,6 +27,8 @@
     ffmpeg
     sops
     age
+    gnumake
+    gh
 
     (catppuccin-kvantum.override {
       accent = "lavender";
