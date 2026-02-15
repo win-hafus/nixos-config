@@ -1,7 +1,7 @@
-{ hostame, ... }:
+{ hostname, ... }:
 {
   networking = {
-    hostName = "${hostame}";
+    hostName = "${hostname}";
     networkmanager.enable = true;
 
     firewall = {
