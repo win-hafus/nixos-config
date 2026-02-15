@@ -15,18 +15,13 @@ My personal NixOS configuration with a focus on modularity, reproducibility, and
 - 📦 **Modular Architecture** — easily extensible and maintainable configuration
 
 ## 📸 Screenshots
-
-### Hyprland:
 <p align="center">
-  <img width="49%" src="https://github.com/user-attachments/assets/fa6b06a9-3815-456e-b427-d3dfa721e8b1" />
+  <img width="49%" src="https://github.com/user-attachments/assets/ac0eb7fa-43aa-411b-bab4-69d44e3c1fed" />
   <img width="49%" src="https://github.com/user-attachments/assets/7e74d589-a5ed-4cc5-8749-d3e7e5c69185" />
-  <br>
-  <img width="98%" src="https://github.com/user-attachments/assets/ac0eb7fa-43aa-411b-bab4-69d44e3c1fed" />
+  <img width="99%" src="https://github.com/user-attachments/assets/fa6b06a9-3815-456e-b427-d3dfa721e8b1" />
+  <img width="49%" src="https://github.com/user-attachments/assets/b69e06a1-f7e4-400b-8e96-14f594ade398" />
+  <img width="49%" src="https://github.com/user-attachments/assets/0de250de-e210-42f2-8912-ef47dffc1195" />
 </p>
-
-
-### Gnome:
-> *later
 
 ## 🗂️ Project Structure
 
