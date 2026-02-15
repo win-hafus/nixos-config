@@ -40,18 +40,6 @@ install: ## Initial install (set hostname + username and apply config)
 help: ## Display this help message
 	@awk 'BEGIN {FS = ":.*##"; printf "\n\033[1mUsage:\033[0m\n  make \033[36m<target>\033[0m\n"} /^[a-zA-Z_-]+:.*?##/ { printf "  \033[36m%-20s\033[0m %s\n", $$1, $$2 } /^##@/ { printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
 
-##@ Development
-
-fmt: ## Format Nix files
-	@echo "✨ Formatting Nix files..."
-	@if command -v alejandra >/dev/null 2>&1; then \
-		alejandra .; \
-	elif command -v nixpkgs-fmt >/dev/null 2>&1; then \
-		nixpkgs-fmt .; \
-	else \
-		nix fmt; \
-	fi
-
 ##@ Updates
 
 update-flake: ## Update flake.lock only
