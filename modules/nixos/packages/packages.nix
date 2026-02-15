@@ -29,6 +29,7 @@
     age
     gnumake
     gh
+    cachix
 
     (catppuccin-kvantum.override {
       accent = "lavender";
