@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, username,... }:
 
 {
   imports = [ ./style.nix  ];
@@ -83,16 +83,6 @@
           tooltip = false;
           on-click = "wlogout &";
           format = "󰐥";
-        };
-
-        "custom/vpn" = {
-          format = "󰖂 {}";
-          tooltip = false;
-          escape = true;
-          exec = "/home/hfv5/.local/bin/vpn/vpn-bar";
-          on-click = "/home/hfv5/.local/bin/vpn/vpn-rofi";
-          exec-on-event = "on-click";
-          interval = 1;
         };
       };
     };

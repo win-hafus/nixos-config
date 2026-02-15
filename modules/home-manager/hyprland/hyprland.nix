@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, username, ... }:
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -152,9 +152,9 @@
       bind = $mainMod, M, exit,
       bind = $mainMod, E, exec, $fileManager
       bind = $mainMod, P, exec, $menu
-      bind = , Insert, exec, hyprshot -m region -o /home/hfv5/Pictures/Screenshots
-      bind = SHIFT, Insert, exec, hyprshot -m window -o /home/hfv5/Pictures/Screenshots
-      bind = CONTROL, Insert, exec, hyprshot -m output -o /home/hfv5/Pictures/Screenshots
+      bind = , Insert, exec, hyprshot -m region -o /home/${username}/Pictures/Screenshots
+      bind = SHIFT, Insert, exec, hyprshot -m window -o /home/${username}/Pictures/Screenshots
+      bind = CONTROL, Insert, exec, hyprshot -m output -o /home/${username}/Pictures/Screenshots
 
       # hyprlock
       bind = $mainMod, U, exec, hyprlock

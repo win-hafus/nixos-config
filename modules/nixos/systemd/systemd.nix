@@ -2,11 +2,12 @@
   config,
   lib,
   pkgs,
+  username,
   ...
 }:
 {
   systemd.services.mpd.environment = {
-    XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.hfv5.uid}";
+    XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.${username}.uid}";
   };
 
   systemd = {

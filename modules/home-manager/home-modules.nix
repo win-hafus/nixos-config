@@ -1,5 +1,5 @@
 {
-  import = [
+  imports = [
     ../../modules/home-manager/hyprland/hyprland.nix
     ../../modules/home-manager/packages/packages.nix
     ../../modules/home-manager/programs/programs.nix

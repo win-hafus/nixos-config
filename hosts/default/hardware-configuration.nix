@@ -6,6 +6,7 @@
   lib,
   pkgs,
   modulesPath,
+  username,
   ...
 }:
 
@@ -36,7 +37,7 @@
     options = [ "subvol=@" ];
   };
 
-  fileSystems."/home/hfv5/mnt" = {
+  fileSystems."/home/${username}/mnt" = {
     device = "/dev/disk/by-uuid/23f01c8e-bda1-4bbe-a5f2-e439b914a10a";
     fsType = "btrfs";
     options = [ "nofail" ];

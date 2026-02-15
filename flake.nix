@@ -23,11 +23,17 @@
 
   outputs =
     { self, nixpkgs, ... }@inputs:
-    {
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    let
+      username = "hfv5";
+      hostname = "nixos";
+    in {
+      lib = {
+        inherit username hostname;
+      };
+      
+      nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit inputs;
-          inherit self;
+          inherit inputs self username hostname;
         };
 
         modules = [
@@ -42,8 +48,8 @@
           inputs.sops-nix.nixosModules.sops
 
           {
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.hfv5 = {
+            home-manager.extraSpecialArgs = { inherit inputs username hostname; };
+            home-manager.users.${username} ={
               imports = [
                 ./hosts/default/home.nix
                 inputs.catppuccin.homeModules.catppuccin

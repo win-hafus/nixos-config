@@ -1,5 +1,5 @@
 {
-  import = [
+  imports = [
     ../../modules/nixos/systemd/systemd.nix
     ../../modules/nixos/services/services.nix
     ../../modules/nixos/network/network.nix

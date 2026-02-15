@@ -3,18 +3,14 @@
   pkgs,
   inputs,
   lib,
+  username,
   ...
 }:
 
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/nixos/systemd/systemd.nix
-    ../../modules/nixos/services/services.nix
-    ../../modules/nixos/network/network.nix
-    ../../modules/nixos/packages/packages.nix
-    ../../modules/nixos/grub/grub.nix
-    ../../modules/nixos/sops/sops.nix
+    ../../modules/nixos/core-modules.nix
     inputs.home-manager.nixosModules.default
     inputs.catppuccin.nixosModules.catppuccin
   ];
@@ -85,7 +81,7 @@
     };
   };
 
-  users.users.hfv5 = {
+  users.users.${username} = {
     isNormalUser = true;
     description = "Hafus";
     extraGroups = [
