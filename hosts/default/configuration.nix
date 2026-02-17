@@ -56,20 +56,15 @@
     };
     portal = {
       enable = true;
-      wlr.enable = true;
-      xdgOpenUsePortal = true;
       extraPortals = [
-        pkgs.xdg-desktop-portal-hyprland
-        pkgs.xdg-desktop-portal-gnome
-        pkgs.xdg-desktop-portal-wlr
         pkgs.xdg-desktop-portal-gtk
-      ];
-      configPackages = [
-        pkgs.xdg-desktop-portal-hyprland
         pkgs.xdg-desktop-portal-gnome
-        pkgs.xdg-desktop-portal-wlr
-        pkgs.xdg-desktop-portal-gtk
       ];
+      config = {
+        common.default = "*";
+        hyprland.default = [ "hyprland" "gtk" ];
+        gnome.default = [ "gnome" "gtk" ];
+      };
     };
   };
 
@@ -94,8 +89,11 @@
     shell = pkgs.zsh;
   };
 
-  nix.settings.trusted-users = [ "root" "${username}" ];
-  
+  nix.settings.trusted-users = [
+    "root"
+    "${username}"
+  ];
+
   programs = {
     xwayland.enable = true;
     zsh.enable = true;
