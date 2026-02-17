@@ -49,9 +49,5 @@
 
     hunspell
     hunspellDicts.ru_RU
-
-    cmake
-    go
-    libnotify
   ];
 }
