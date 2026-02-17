@@ -5,7 +5,7 @@
 
 # Configuration
 FLAKE := .
-HOSTNAME != nix eval --raw .#lib.hostname 2>/dev/null || echo nixos
+HOSTNAME := $(shell nix eval --raw .#lib.hostname 2>/dev/null || echo "nixos")
 
 ##@ General
 
