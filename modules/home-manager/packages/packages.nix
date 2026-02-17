@@ -8,52 +8,50 @@
     waybar
     wl-clipboard
     xwayland-satellite
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-gnome
+
+    swww
+    hyprpicker
+    hyprshot
+    wlogout
+    rofi
 
     alacritty
-    qbittorrent
-    vlc
-    imv
-    mpv
-    rofi
-    wlogout
-    reaper
-    # reaper-sws-extension
-    discord
-    pavucontrol
-    nautilus
-    obs-studio
-    qbittorrent
-    telegram-desktop
-    vscode
-    wakatime-cli
-    obsidian
-    libreoffice-qt
-
-    hunspell
-    hunspellDicts.ru_RU
-
-    flatpak
-
     ranger
     helix
     tree
     curl
     p7zip
     playerctl
-    # hyprpaper
-    swww
-    hyprpicker
-    hyprshot
     nixfmt
 
-    cmake
-    cli11
+    vlc
+    imv
+    mpv
+    reaper
+    # reaper-sws-extension
+    obs-studio
+    pavucontrol
 
-    python313
-    python313Packages.pip
-    libnotify
-    go
+    telegram-desktop
+    discord
+    qbittorrent
 
+    obsidian
+    libreoffice-qt
+    vscode
+    wakatime-cli
+
+    nautilus
+    flatpak
     lm_sensors
+
+    hunspell
+    hunspellDicts.ru_RU
+
+    cmake
+    go
+    libnotify
   ];
 }
