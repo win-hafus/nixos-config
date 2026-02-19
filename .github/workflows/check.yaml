@@ -27,7 +27,7 @@ jobs:
       - name: Setup Cachix
         uses: cachix/cachix-action@v15
         with:
-          name: my-cache
+          name: nixos-config-cache-hfv5
           authToken: '${{ secrets.AUTH_CACHIX_KEY }}'
 
       - name: Check flake
@@ -58,7 +58,7 @@ jobs:
       - name: Setup Cachix
         uses: cachix/cachix-action@v15
         with:
-          name: my-cache
+          name: nixos-config-cache-hfv5
           authToken: '${{ secrets.AUTH_CACHIX_KEY }}'
       - name: Update flake
         run: nix flake update
