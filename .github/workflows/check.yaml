@@ -28,7 +28,7 @@ jobs:
         uses: cachix/cachix-action@v15
         with:
           name: my-cache
-          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+          authToken: '${{ secrets.AUTH_CACHIX_KEY }}'
 
       - name: Check flake
         run: nix flake check --show-trace
@@ -59,7 +59,7 @@ jobs:
         uses: cachix/cachix-action@v15
         with:
           name: my-cache
-          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+          authToken: '${{ secrets.AUTH_CACHIX_KEY }}'
       - name: Update flake
         run: nix flake update
       - name: Create Pull Request
