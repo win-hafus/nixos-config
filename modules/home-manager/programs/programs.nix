@@ -2,7 +2,7 @@
   imports = [
     ./alacritty/alacritty.nix
     ./helix/helix.nix
-    #./vscode/vscode.nix
+    ./vscode/vscode.nix
     ./waybar/waybar.nix
     ./ranger/ranger.nix
     ./rofi/rofi.nix
