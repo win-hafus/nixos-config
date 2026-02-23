@@ -33,7 +33,7 @@
 
         "workbench.colorTheme" = "Catppuccin Macchiato";
         "workbench.iconTheme" = "catppuccin-macchiato";
-        "workbench.activityBar.visible" = false;
+        "workbench.activityBar.location" = "default";
 
         "window.menuBarVisibility" = "toggle";
         "terminal.external.linuxExec" = "alacritty";
