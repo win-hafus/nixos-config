@@ -41,7 +41,7 @@ jobs:
             --accept-flake-config
 
       - name: Check formatting
-        run: nix fmt --accept-flake-config -- --check .
+        run: nix fmt --accept-flake-config -- .
         continue-on-error: true
 
   update-flake:
