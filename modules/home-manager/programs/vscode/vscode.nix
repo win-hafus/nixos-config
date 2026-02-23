@@ -21,7 +21,7 @@
         github.copilot-chat
         catppuccin.catppuccin-vsc-icons
         catppuccin.catppuccin-vsc
-    ];
+      ];
 
       userSettings = {
         "editor.tabSize" = 2;
