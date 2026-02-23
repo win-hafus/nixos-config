@@ -25,8 +25,8 @@
     curl
     p7zip
     playerctl
-    treefmt
-    nil
+    nixfmt
+    nixd
 
     vlc
     imv

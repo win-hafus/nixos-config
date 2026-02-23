@@ -43,7 +43,7 @@
         "liveServer.settings.donotShowInfoMsg" = true;
 
         "nix.enableLanguageServer" = true;
-        "nix.serverPath" = "nil";
+        "nix.serverPath" = "nixd";
         "nix.serverSettings" = {
           nixd.formatting.command = [ "nixfmt" ];
         };
