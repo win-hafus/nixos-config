@@ -7,7 +7,7 @@
       "nixos-config-cache-hfv5.cachix.org-1:h8ptySxiX2eztliDPG0Y6PadJM0fAPDY27RQ1rfWRbA="
     ];
   };
-  
+
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
@@ -24,6 +24,7 @@
     catppuccin.url = "github:catppuccin/nix";
     minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    treefmt-nix.url = "github:numtide/treefmt-nix";
 
     zapret-discord-youtube.url = "github:kartavkun/zapret-discord-youtube";
     sops-nix.url = "github:Mic92/sops-nix";
@@ -40,7 +41,14 @@
       lib = {
         inherit username hostname;
       };
-
+      formatter.x86_64-linux =
+        (inputs.treefmt-nix.lib.evalModule nixpkgs.legacyPackages.x86_64-linux {
+          projectRootFile = "flake.nix";
+          programs.nixfmt.enable = true;
+          settings.global.excludes = [
+            "modules/home-manager/programs/reaper/"
+          ];
+        }).config.build.wrapper;
       nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit

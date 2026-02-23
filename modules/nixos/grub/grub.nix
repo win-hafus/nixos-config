@@ -1,10 +1,4 @@
 {
-  config,
-  pkgs,
-  lib,
-  ...
-}:
-{
   boot.initrd.kernelModules = [ "amdgpu" ];
   boot.loader.grub = {
     enable = true;

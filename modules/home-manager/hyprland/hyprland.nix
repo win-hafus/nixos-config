@@ -1,4 +1,7 @@
-{ config, pkgs, username, ... }:
+{
+  username,
+  ...
+}:
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -137,39 +140,39 @@
         "$mainMod SHIFT, V, exec, $terminal --class clipse -e clipse"
         ", Insert, exec, bash -c 'f=$(hyprshot -m region -o /home/${username}/Pictures/Screenshots) && [ -f \"$f\" ] && wl-copy < \"$f\"'"
         "SHIFT, Insert, exec, bash -c 'f=$(hyprshot -m window -o /home/${username}/Pictures/Screenshots) && [ -f \"$f\" ] && wl-copy < \"$f\"'"
-        "CONTROL, Insert, exec, bash -c 'f=$(hyprshot -m output -o /home/${username}/Pictures/Screenshots) && [ -f \"$f\" ] && wl-copy < \"$f\"'"       
+        "CONTROL, Insert, exec, bash -c 'f=$(hyprshot -m output -o /home/${username}/Pictures/Screenshots) && [ -f \"$f\" ] && wl-copy < \"$f\"'"
         # hyprlock
         "$mainMod, U, exec, hyprlock"
-        
+
         # float
         "$mainMod, G, pin"
         "$mainMod, C, centerwindow"
-        
+
         # tiling
         "$mainMod, V, togglefloating,"
         "$mainMod, B, togglesplit,"
         "$mainMod, T, pseudo,"
         "$mainMod, F, fullscreen, 1"
         "$mainMod SHIFT, F, fullscreen, 0"
-        
+
         # Move focus
         "$mainMod, H, movefocus, l"
         "$mainMod, L, movefocus, r"
         "$mainMod, K, movefocus, u"
         "$mainMod, J, movefocus, d"
-        
+
         # Move windows
         "$mainMod SHIFT, H, movewindow, l"
         "$mainMod SHIFT, L, movewindow, r"
         "$mainMod SHIFT, K, movewindow, u"
         "$mainMod SHIFT, J, movewindow, d"
-        
+
         # Resize windows
         "$mainMod CONTROL, H, resizeactive, -20% 0"
         "$mainMod CONTROL, L, resizeactive, 20% 0"
         "$mainMod CONTROL, K, resizeactive, 0 20%"
         "$mainMod CONTROL, J, resizeactive, 0 -20%"
-        
+
         # Workspaces
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
@@ -181,7 +184,7 @@
         "$mainMod, 8, workspace, 8"
         "$mainMod, 9, workspace, 9"
         "$mainMod, 0, workspace, 10"
-        
+
         # Move to workspace
         "$mainMod SHIFT, 1, movetoworkspace, 1"
         "$mainMod SHIFT, 2, movetoworkspace, 2"
@@ -193,11 +196,11 @@
         "$mainMod SHIFT, 8, movetoworkspace, 8"
         "$mainMod SHIFT, 9, movetoworkspace, 9"
         "$mainMod SHIFT, 0, movetoworkspace, 10"
-        
+
         # Special workspace
         "$mainMod, S, togglespecialworkspace, magic"
         "$mainMod SHIFT, S, movetoworkspace, special:magic"
-        
+
         # Mouse workspace navigation
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"

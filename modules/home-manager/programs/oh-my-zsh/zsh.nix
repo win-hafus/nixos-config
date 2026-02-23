@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 let
   customOhMyZshTheme = ''
     function custom_pwd() {

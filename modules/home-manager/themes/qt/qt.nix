@@ -1,4 +1,3 @@
-{ config, ... }:
 {
   catppuccin.kvantum = {
     enable = true;

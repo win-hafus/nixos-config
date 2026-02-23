@@ -8,7 +8,7 @@
     enable = true;
     config = {
       profile = "high-quality";
-      autofit-larger="1280x720";
+      autofit-larger = "1280x720";
     };
   };
 }

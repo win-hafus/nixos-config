@@ -1,8 +1,6 @@
 {
-  config,
   pkgs,
   inputs,
-  lib,
   username,
   ...
 }:
@@ -62,8 +60,14 @@
       ];
       config = {
         common.default = "*";
-        hyprland.default = [ "hyprland" "gtk" ];
-        gnome.default = [ "gnome" "gtk" ];
+        hyprland.default = [
+          "hyprland"
+          "gtk"
+        ];
+        gnome.default = [
+          "gnome"
+          "gtk"
+        ];
       };
     };
   };

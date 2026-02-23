@@ -1,7 +1,5 @@
-{ config, pkgs, username,... }:
-
 {
-  imports = [ ./style.nix  ];
+  imports = [ ./style.nix ];
   programs.waybar = {
     enable = true;
     settings = {
@@ -9,9 +7,21 @@
         layer = "top";
         position = "top";
 
-        modules-left = [ "hyprland/workspaces" "hyprland/window" ];
-        modules-center = [ "custom/music" "clock" ];
-        modules-right = [ "tray" "network" "pulseaudio" "pulseaudio#microphone" "custom/power" ];
+        modules-left = [
+          "hyprland/workspaces"
+          "hyprland/window"
+        ];
+        modules-center = [
+          "custom/music"
+          "clock"
+        ];
+        modules-right = [
+          "tray"
+          "network"
+          "pulseaudio"
+          "pulseaudio#microphone"
+          "custom/power"
+        ];
 
         "hyprland/workspaces" = {
           disable-scroll = true;
@@ -68,7 +78,11 @@
           format-muted = "󰖁 Muted";
           tooltip = false;
           format-icons = {
-            default = [ "󰕿" "󰖀" "󰕾" ];
+            default = [
+              "󰕿"
+              "󰖀"
+              "󰕾"
+            ];
           };
           on-click = "pavucontrol";
         };
