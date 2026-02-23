@@ -1,3 +1,4 @@
+{ username, ... }:
 {
   services = {
     openssh = {
@@ -12,5 +13,5 @@
       };
     };
   };
-
+  users.users.${username}.openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDcBig1YZAltquSlEaPGX7ccoVhR4lel2hbfmD+Yvbym my-phone" ]
 }

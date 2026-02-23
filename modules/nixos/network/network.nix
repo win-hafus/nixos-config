@@ -6,6 +6,7 @@
 
     firewall = {
       allowedTCPPorts = [
+        22
         1714
         1715
         1716
