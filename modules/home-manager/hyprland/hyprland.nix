@@ -2,257 +2,245 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
-    extraConfig = ''
-      ################
-      ### MONITORS ###
-      ################
-      monitor=HDMI-A-1,1920x1080@180,0x0,1.0
+    settings = {
+      # Monitors
+      monitor = "HDMI-A-1,1920x1080@180,0x0,1.0";
 
+      # Programs
+      "$terminal" = "alacritty";
+      "$fileManager" = "nautilus";
+      "$menu" = "rofi -show drun";
+      "$mainMod" = "SUPER";
 
-      ###################
-      ### MY PROGRAMS ###
-      ###################
-      $terminal = alacritty
-      $fileManager = nautilus
-      $menu = rofi -show drun
+      # Autostart
+      exec-once = [
+        "waybar &"
+        "clipse -listen"
+        "Telegram &"
+        "discord &"
+        "swww-daemon &"
+      ];
 
+      # Environment variables
+      env = [
+        "XCURSOR_SIZE,16"
+        "HYPRCURSOR_SIZE,16"
+      ];
 
-      #################
-      ### AUTOSTART ###
-      #################
-      # exec-once = sleep 2 && hyprpaper
-      exec-once = waybar &
-      exec-once = Telegram &
-      exec-once = discord &
-      exec-once = swww-daemon &
+      # General settings
+      general = {
+        gaps_in = 5;
+        gaps_out = 50;
+        border_size = 2;
+        "col.active_border" = "rgba(b7bdf8ff)";
+        "col.inactive_border" = "rgba(1e1e2e00)";
+        resize_on_border = true;
+        allow_tearing = false;
+        layout = "dwindle";
+      };
 
-      #############################
-      ### ENVIRONMENT VARIABLES ###
-      #############################
-      env = XCURSOR_SIZE,16
-      env = HYPRCURSOR_SIZE,16
+      # Decoration
+      decoration = {
+        rounding = 8;
+        active_opacity = 1.0;
+        inactive_opacity = 1.0;
 
+        shadow = {
+          enabled = true;
+          range = 4;
+          render_power = 3;
+          scale = 0.5;
+          color = "rgba(00000022)";
+        };
 
-      #####################
-      ### LOOK AND FEEL ###
-      #####################
+        blur = {
+          enabled = true;
+          size = 3;
+          passes = 3;
+          new_optimizations = true;
+          vibrancy = 0.1696;
+        };
+      };
 
-      general {
-        gaps_in = 5
-        gaps_out = 50
+      # Animations
+      animations = {
+        enabled = true;
 
-        border_size = 2
-        col.active_border = rgba(b7bdf8ff)
-        col.inactive_border = rgba(1e1e2e00)
-        resize_on_border = true
-        allow_tearing = false
+        bezier = [
+          "easeOutQuint,0.23,1,0.32,1"
+          "easeInOutCubic,0.65,0.05,0.36,1"
+          "linear,0,0,1,1"
+          "almostLinear,0.5,0.5,0.75,1.0"
+          "quick,0.15,0,0.1,1"
+          "popup,0.05,0.9,0.1,1.05"
+          "fade_out,0.1,0.9,0.2,1"
+          "pop_in,0.1,1,0.25,1.1"
+          "fade_in,0.05,0.95,0.1,1"
+        ];
 
-        layout = dwindle
-      }
+        animation = [
+          "global,1,10,default"
+          "border,1,2,default"
+          "windows,1,4.79,popup"
+          "windowsIn,1,4,pop_in,popin"
+          "windowsOut,1,4,pop_in,popin 87%"
+          "fadeIn,1,1.73,fade_in"
+          "fadeOut,1,1.46,fade_out"
+          "fade,1,3.03,quick"
+          "layers,1,3.81,easeOutQuint"
+          "layersIn,1,4,easeOutQuint,fade"
+          "layersOut,1,1.5,linear,fade"
+          "fadeLayersIn,1,1.79,almostLinear"
+          "fadeLayersOut,1,1.39,almostLinear"
+          "workspaces,1,1.94,almostLinear,fade"
+          "workspacesIn,1,1.21,linear,slide"
+          "workspacesOut,1,1.94,linear,slide"
+        ];
+      };
 
-      decoration {
-        rounding = 8
+      # Dwindle layout
+      dwindle = {
+        pseudotile = true;
+        preserve_split = true;
+      };
 
-        # Change transparency of focused and unfocused windows
-        active_opacity = 1.0
-        inactive_opacity = 1.0
+      # Master layout
+      master = {
+        new_status = "master";
+      };
 
-        shadow {
-          enabled = true
-          range = 4
-          render_power = 3
-          scale = 0.5
-          color = rgba(00000022)
-        }
+      # Misc
+      misc = {
+        force_default_wallpaper = 0;
+        disable_hyprland_logo = true;
+      };
 
-        blur {
-          enabled = true
-          size = 3
-          passes = 3
-          new_optimizations = true
+      # Input
+      input = {
+        kb_layout = "us,ru";
+        kb_options = "grp:alt_shift_toggle";
+        follow_mouse = 1;
+        sensitivity = 0;
 
-          vibrancy = 0.1696
-        }
-      }
+        touchpad = {
+          natural_scroll = true;
+        };
+      };
 
-      animations {
-        enabled = yes
+      # Keybindings
+      bind = [
+        "$mainMod, Return, exec, $terminal"
+        "$mainMod SHIFT, C, killactive,"
+        "$mainMod, M, exit,"
+        "$mainMod, E, exec, $fileManager"
+        "$mainMod, P, exec, $menu"
+        "$mainMod SHIFT, V, exec, $terminal --class clipse -e clipse"
+        ", Insert, exec, bash -c 'f=$(hyprshot -m region -o /home/${username}/Pictures/Screenshots) && [ -f \"$f\" ] && wl-copy < \"$f\"'"
+        "SHIFT, Insert, exec, bash -c 'f=$(hyprshot -m window -o /home/${username}/Pictures/Screenshots) && [ -f \"$f\" ] && wl-copy < \"$f\"'"
+        "CONTROL, Insert, exec, bash -c 'f=$(hyprshot -m output -o /home/${username}/Pictures/Screenshots) && [ -f \"$f\" ] && wl-copy < \"$f\"'"       
+        # hyprlock
+        "$mainMod, U, exec, hyprlock"
+        
+        # float
+        "$mainMod, G, pin"
+        "$mainMod, C, centerwindow"
+        
+        # tiling
+        "$mainMod, V, togglefloating,"
+        "$mainMod, B, togglesplit,"
+        "$mainMod, T, pseudo,"
+        "$mainMod, F, fullscreen, 1"
+        "$mainMod SHIFT, F, fullscreen, 0"
+        
+        # Move focus
+        "$mainMod, H, movefocus, l"
+        "$mainMod, L, movefocus, r"
+        "$mainMod, K, movefocus, u"
+        "$mainMod, J, movefocus, d"
+        
+        # Move windows
+        "$mainMod SHIFT, H, movewindow, l"
+        "$mainMod SHIFT, L, movewindow, r"
+        "$mainMod SHIFT, K, movewindow, u"
+        "$mainMod SHIFT, J, movewindow, d"
+        
+        # Resize windows
+        "$mainMod CONTROL, H, resizeactive, -20% 0"
+        "$mainMod CONTROL, L, resizeactive, 20% 0"
+        "$mainMod CONTROL, K, resizeactive, 0 20%"
+        "$mainMod CONTROL, J, resizeactive, 0 -20%"
+        
+        # Workspaces
+        "$mainMod, 1, workspace, 1"
+        "$mainMod, 2, workspace, 2"
+        "$mainMod, 3, workspace, 3"
+        "$mainMod, 4, workspace, 4"
+        "$mainMod, 5, workspace, 5"
+        "$mainMod, 6, workspace, 6"
+        "$mainMod, 7, workspace, 7"
+        "$mainMod, 8, workspace, 8"
+        "$mainMod, 9, workspace, 9"
+        "$mainMod, 0, workspace, 10"
+        
+        # Move to workspace
+        "$mainMod SHIFT, 1, movetoworkspace, 1"
+        "$mainMod SHIFT, 2, movetoworkspace, 2"
+        "$mainMod SHIFT, 3, movetoworkspace, 3"
+        "$mainMod SHIFT, 4, movetoworkspace, 4"
+        "$mainMod SHIFT, 5, movetoworkspace, 5"
+        "$mainMod SHIFT, 6, movetoworkspace, 6"
+        "$mainMod SHIFT, 7, movetoworkspace, 7"
+        "$mainMod SHIFT, 8, movetoworkspace, 8"
+        "$mainMod SHIFT, 9, movetoworkspace, 9"
+        "$mainMod SHIFT, 0, movetoworkspace, 10"
+        
+        # Special workspace
+        "$mainMod, S, togglespecialworkspace, magic"
+        "$mainMod SHIFT, S, movetoworkspace, special:magic"
+        
+        # Mouse workspace navigation
+        "$mainMod, mouse_down, workspace, e+1"
+        "$mainMod, mouse_up, workspace, e-1"
+      ];
 
-        bezier = easeOutQuint,0.23,1,0.32,1
-        bezier = easeInOutCubic,0.65,0.05,0.36,1
-        bezier = linear,0,0,1,1
-        bezier = almostLinear,0.5,0.5,0.75,1.0
-        bezier = quick,0.15,0,0.1,1
+      bindm = [
+        "$mainMod, mouse:272, movewindow"
+        "$mainMod, mouse:273, resizewindow"
+      ];
 
-        bezier = popup, 0.05, 0.9, 0.1, 1.05
-        bezier = fade_out, 0.1, 0.9, 0.2, 1
+      bindel = [
+        ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+        ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+        ",XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+"
+        ",XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-"
+      ];
 
-        bezier = pop_in, 0.1, 1, 0.25, 1.1       
-        bezier = fade_in, 0.05, 0.95, 0.1, 1     
+      bindl = [
+        ", XF86AudioNext, exec, playerctl next"
+        ", XF86AudioPause, exec, playerctl play-pause"
+        ", XF86AudioPlay, exec, playerctl play-pause"
+        ", XF86AudioPrev, exec, playerctl previous"
+      ];
 
-        animation = global, 1, 10, default
-        animation = border, 1, 2, default
-        animation = windows, 1, 4.79, popup
-        animation = windowsIn, 1, 4, pop_in, popin
-        animation = windowsOut, 1, 4, pop_in, popin 87%
-        animation = fadeIn, 1, 1.73, fade_in
-        animation = fadeOut, 1, 1.46, fade_out
-        animation = fade, 1, 3.03, quick
-        animation = layers, 1, 3.81, easeOutQuint
-        animation = layersIn, 1, 4, easeOutQuint, fade
-        animation = layersOut, 1, 1.5, linear, fade
-        animation = fadeLayersIn, 1, 1.79, almostLinear
-        animation = fadeLayersOut, 1, 1.39, almostLinear
-        animation = workspaces, 1, 1.94, almostLinear, fade
-        animation = workspacesIn, 1, 1.21, linear, slide
-        animation = workspacesOut, 1, 1.94, linear, slide
-      }
+      # Layer rules
+      layerrule = "animation slide, match:namespace notifications";
 
-      dwindle {
-        pseudotile = true
-        preserve_split = true
-      }
-
-      master {
-        new_status = master
-      }
-
-      misc {
-        force_default_wallpaper = 0
-        disable_hyprland_logo = true
-      }
-
-      #############
-      ### INPUT ###
-      #############
-
-      input {
-        kb_layout = us,ru
-        kb_variant =
-        kb_model =
-        kb_options = grp:alt_shift_toggle
-        kb_rules =
-
-        follow_mouse = 1
-
-        sensitivity = 0
-
-        touchpad {
-          natural_scroll = true
-        }
-      }
-
-      ###################
-      ### KEYBINDINGS ###
-      ###################
-      $mainMod = SUPER
-
-      bind = $mainMod, Return, exec, $terminal
-      bind = $mainMod SHIFT, C, killactive,
-      bind = $mainMod, M, exit,
-      bind = $mainMod, E, exec, $fileManager
-      bind = $mainMod, P, exec, $menu
-      bind = , Insert, exec, hyprshot -m region -o /home/${username}/Pictures/Screenshots
-      bind = SHIFT, Insert, exec, hyprshot -m window -o /home/${username}/Pictures/Screenshots
-      bind = CONTROL, Insert, exec, hyprshot -m output -o /home/${username}/Pictures/Screenshots
-
-      # hyprlock
-      bind = $mainMod, U, exec, hyprlock
-
-      # float
-      bind = $mainMod, G, pin
-      bind = $mainMod, C, centerwindow
-
-      # tiling
-      bind = $mainMod, V, togglefloating,
-      bind = $mainMod, B, togglesplit,
-      bind = $mainMod, T, pseudo,
-      bind = $mainMod, F, fullscreen, 1
-      bind = $mainMod SHIFT, F, fullscreen, 0
-
-      # Move focus with mainMod + arrow keys
-      bind = $mainMod, H, movefocus, l
-      bind = $mainMod, L, movefocus, r
-      bind = $mainMod, K, movefocus, u
-      bind = $mainMod, J, movefocus, d
-
-      bind = $mainMod SHIFT, H, movewindow, l
-      bind = $mainMod SHIFT, L, movewindow, r
-      bind = $mainMod SHIFT, K, movewindow, u
-      bind = $mainMod SHIFT, J, movewindow, d
-
-      bind = $mainMod CONTROL, H, resizeactive, -20% 0
-      bind = $mainMod CONTROL, L, resizeactive, 20% 0
-      bind = $mainMod CONTROL, K, resizeactive, 0 20%
-      bind = $mainMod CONTROL, J, resizeactive, 0 -20%
-
-      # Switch workspaces with mainMod + [0-9]
-      bind = $mainMod, 1, workspace, 1
-      bind = $mainMod, 2, workspace, 2
-      bind = $mainMod, 3, workspace, 3
-      bind = $mainMod, 4, workspace, 4
-      bind = $mainMod, 5, workspace, 5
-      bind = $mainMod, 6, workspace, 6
-      bind = $mainMod, 7, workspace, 7
-      bind = $mainMod, 8, workspace, 8
-      bind = $mainMod, 9, workspace, 9
-      bind = $mainMod, 0, workspace, 10
-
-      # Move active window to a workspace with mainMod + SHIFT + [0-9]
-      bind = $mainMod SHIFT, 1, movetoworkspace, 1
-      bind = $mainMod SHIFT, 2, movetoworkspace, 2
-      bind = $mainMod SHIFT, 3, movetoworkspace, 3
-      bind = $mainMod SHIFT, 4, movetoworkspace, 4
-      bind = $mainMod SHIFT, 5, movetoworkspace, 5
-      bind = $mainMod SHIFT, 6, movetoworkspace, 6
-      bind = $mainMod SHIFT, 7, movetoworkspace, 7
-      bind = $mainMod SHIFT, 8, movetoworkspace, 8
-      bind = $mainMod SHIFT, 9, movetoworkspace, 9
-      bind = $mainMod SHIFT, 0, movetoworkspace, 10
-
-      bind = $mainMod, S, togglespecialworkspace, magic
-      bind = $mainMod SHIFT, S, movetoworkspace, special:magic
-
-      # Scroll through existing workspaces with mainMod + scroll
-      bind = $mainMod, mouse_down, workspace, e+1
-      bind = $mainMod, mouse_up, workspace, e-1
-
-      # Move/resize windows with mainMod + LMB/RMB and dragging
-      bindm = $mainMod, mouse:272, movewindow
-      bindm = $mainMod, mouse:273, resizewindow
-
-      # Laptop multimedia keys for volume and LCD brightness
-      bindel = ,XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
-      bindel = ,XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-      bindel = ,XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-      bindel = ,XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
-      bindel = ,XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+
-      bindel = ,XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-
-
-      # Requires playerctl
-      bindl = , XF86AudioNext, exec, playerctl next
-      bindl = , XF86AudioPause, exec, playerctl play-pause
-      bindl = , XF86AudioPlay, exec, playerctl play-pause
-      bindl = , XF86AudioPrev, exec, playerctl previous
-
-      ##############################
-      ### WINDOWS AND WORKSPACES ###
-      ##############################
-      layerrule = animation slide, match:namespace notifications
-
-      windowrule = float on, match:class ^(imv)$
-      windowrule = float on, match:class ^(mpv)$
-      windowrule = float on, match:class ^(vlc)$
-
-      windowrule = center on, match:class ^(imv)$
-      windowrule = center on, match:class ^(mpv)$
-      windowrule = center on, match:class ^(vlc)$
-
-      # Ignore maximize requests from apps
-      windowrule = suppress_event maximize, match:class .*
-
-      # Fix some dragging issues with XWayland
-      windowrule = no_focus on, match:class ^$, match:title ^$, match:xwayland 1, match:float 1, match:fullscreen 0, match:pin 0
-    '';
+      # Window rules
+      windowrule = [
+        "float on, match:class ^(imv)$"
+        "float on, match:class ^(mpv)$"
+        "float on, match:class ^(vlc)$"
+        "float on, match:class ^(clipse)$"
+        "center on, match:class ^(imv)$"
+        "center on, match:class ^(mpv)$"
+        "center on, match:class ^(vlc)$"
+        "size 622 652, match:class ^(clipse)$"
+        "move cursor -311 -326, match:class ^(clipse)$"
+        "suppress_event maximize, match:class .*"
+        "no_focus on, match:class ^$, match:title ^$, match:xwayland 1, match:float 1, match:fullscreen 0, match:pin 0"
+      ];
+    };
   };
 }
