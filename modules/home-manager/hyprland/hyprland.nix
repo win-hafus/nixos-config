@@ -79,6 +79,8 @@
           "fade_out,0.1,0.9,0.2,1"
           "pop_in,0.1,1,0.25,1.1"
           "fade_in,0.05,0.95,0.1,1"
+          "windowMove,0.25,1,0.5,1"
+          "snapBack,0.6,0,0.4,1"
         ];
 
         animation = [
@@ -87,9 +89,12 @@
           "windows,1,4.79,popup"
           "windowsIn,1,4,pop_in,popin"
           "windowsOut,1,4,pop_in,popin 87%"
+          "windowsMove,1,1.5,windowMove"
           "fadeIn,1,1.73,fade_in"
           "fadeOut,1,1.46,fade_out"
           "fade,1,3.03,quick"
+          "fadeSwitch,1,2,easeInOutCubic"
+          "fadeDim,1,2.5,almostLinear"
           "layers,1,3.81,easeOutQuint"
           "layersIn,1,4,easeOutQuint,fade"
           "layersOut,1,1.5,linear,fade"
