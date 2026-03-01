@@ -24,31 +24,41 @@
       ];
 
       userSettings = {
-        "editor.tabSize" = 2;
-        "editor.fontFamily" = "Cascadia Code";
-        "editor.fontLigatures" = "'calt', 'ss01'";
-        "editor.formatOnSave" = true;
-        "editor.minimap.enabled" = false;
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-
-        "workbench.colorTheme" = "Catppuccin Macchiato";
-        "workbench.iconTheme" = "catppuccin-macchiato";
-        "workbench.activityBar.location" = "default";
-
+        
         "window.menuBarVisibility" = "toggle";
         "terminal.external.linuxExec" = "alacritty";
-        "explorer.confirmDelete" = false;
         "files.autoSave" = "afterDelay";
         "security.workspace.trust.untrustedFiles" = "open";
         "liveServer.settings.donotShowInfoMsg" = true;
-
-        "nix.enableLanguageServer" = true;
-        "nix.serverPath" = "nixd";
-        "nix.serverSettings" = {
-          nixd.formatting.command = [ "nixfmt" ];
+        "redhat.telemetry.enabled" = true;
+        "explorer.confirmDelete" = false;
+        
+        "editor" = {
+          "tabSize" = 2;
+          "fontFamily" = "Cascadia Code";
+          "fontLigatures" = "'calt', 'ss01'";
+          "formatOnSave" = true;
+          "minimap.enabled" = false;
+          "defaultFormatter" = "esbenp.prettier-vscode";
+        };
+        
+        "workbench" = {
+          "colorTheme" = "Catppuccin Macchiato";
+          "iconTheme" = "catppuccin-macchiato";
+          "activityBar.location" = "default";
         };
 
-        "redhat.telemetry.enabled" = true;
+        "nix" = {
+          "enableLanguageServer" = true;
+          "serverPath" = "nixd";
+          "serverSettings" = {
+            nixd.formatting.command = [ "nixfmt" ];
+          };
+        };
+        
+        "[nix]" = {
+          "editor.defaultFormatter" = "jnoortheen.nix-ide";
+        };
       };
     };
   };
