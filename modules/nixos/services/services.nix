@@ -8,7 +8,7 @@
   services = {
     flatpak.enable = true;
     libinput.enable = true;
-    resolved.enable = true;
+    #resolved.enable = true;
     gvfs.enable = true;
     zapret-discord-youtube = {
       enable = true;
