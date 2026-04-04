@@ -22,6 +22,7 @@
         "Telegram &"
         "discord &"
         "awww-daemon &"
+        "discover-overlay"
       ];
 
       # Environment variables

@@ -38,6 +38,7 @@
 
     telegram-desktop
     discord
+    discover-overlay
     qbittorrent
 
     obsidian
