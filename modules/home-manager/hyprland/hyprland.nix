@@ -155,7 +155,7 @@
 
         # tiling
         "$mainMod, V, togglefloating,"
-        "$mainMod, B, togglesplit,"
+        "$mainMod, B, layoutmsg, togglesplit, 0"
         "$mainMod, T, pseudo,"
         "$mainMod, F, fullscreen, 1"
         "$mainMod SHIFT, F, fullscreen, 0"
