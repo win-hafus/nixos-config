@@ -21,7 +21,7 @@
         "clipse -listen"
         "Telegram &"
         "discord &"
-        "swww-daemon &"
+        "awww-daemon &"
       ];
 
       # Environment variables

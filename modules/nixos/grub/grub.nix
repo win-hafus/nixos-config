@@ -12,7 +12,7 @@
         {
           name = "nixos";
           lineTop = "NixOS";
-          lineBottom = "Survival Mode, No Cheats, Version: 25.05";
+          lineBottom = "Survival Mode, No Cheats, Version: 26.05";
           imgName = "nixos";
         }
       ];

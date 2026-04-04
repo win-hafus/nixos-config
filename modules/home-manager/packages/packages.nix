@@ -12,7 +12,7 @@
     xdg-desktop-portal-gtk
     xdg-desktop-portal-gnome
 
-    swww
+    awww
     hyprpicker
     hyprshot
     wlogout
