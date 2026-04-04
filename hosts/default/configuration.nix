@@ -89,6 +89,8 @@
       "storage"
       "video"
       "audio"
+      "seat"
+      "input"
     ];
     shell = pkgs.zsh;
   };
