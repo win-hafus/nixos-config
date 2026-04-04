@@ -46,7 +46,7 @@ My personal NixOS configuration with a focus on modularity, reproducibility, and
 |-----------|-------|
 | **Display Manager** | SDDM with Catppuccin theme |
 | **Desktop Environment** | GNOME + Hyprland (your choice) |
-| **Wallpaper Engine** | SWWW |
+| **Wallpaper Engine** | AWWW |
 | **Theme** | Catppuccin Macchiato Lavender |
 
 ### User Environment
