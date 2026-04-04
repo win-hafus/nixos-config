@@ -41,15 +41,14 @@
     qbittorrent
 
     obsidian
-    libreoffice-qt
     vscode
     wakatime-cli
 
     nautilus
     flatpak
     lm_sensors
-
-    hunspell
-    hunspellDicts.ru_RU
+    amneziawg-tools
+    amneziawg-go
+    onlyoffice-desktopeditors
   ];
 }
