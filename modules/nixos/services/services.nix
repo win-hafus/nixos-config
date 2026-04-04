@@ -8,11 +8,10 @@
   services = {
     flatpak.enable = true;
     libinput.enable = true;
-    #resolved.enable = true;
     gvfs.enable = true;
     zapret-discord-youtube = {
       enable = true;
-      configName = "general(ALT)";
+      configName = "general (SIMPLE FAKE)";
     };
 
     displayManager.sddm = {
