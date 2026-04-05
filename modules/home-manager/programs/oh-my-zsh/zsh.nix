@@ -65,4 +65,8 @@ in
       theme = "hafus";
     };
   };
+  home.sessionPath = [
+    "$HOME/.local/bin"
+    "$HOME/.cargo/bin"
+  ];
 }
