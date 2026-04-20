@@ -3,6 +3,9 @@
   ...
 }:
 {
+  imports = [
+    ./quickshell.nix
+  ];
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
