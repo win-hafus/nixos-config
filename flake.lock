@@ -18,6 +18,22 @@
         "type": "github"
       }
     },
+    "dots-hyprland": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1775338412,
+        "narHash": "sha256-2NadU9MlTqzDGBCoNNhOfr+NvGZJnF1h0iJYBPuGi5c=",
+        "owner": "end-4",
+        "repo": "dots-hyprland",
+        "rev": "aea6216a7fc15bddbf547e4fbe6040ba8632fdbc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "end-4",
+        "repo": "dots-hyprland",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems_2"
@@ -203,17 +219,56 @@
         "type": "github"
       }
     },
+    "quickshell": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1775335892,
+        "narHash": "sha256-rWJ//l6k1hwe/A2fNdzuvEuHedBQkMIHLU9eNTu4N7I=",
+        "ref": "refs/heads/master",
+        "rev": "ad5fd9116e25bc502468f4dfa884ee027887c51c",
+        "revCount": 793,
+        "type": "git",
+        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+      }
+    },
     "root": {
       "inputs": {
         "catppuccin": "catppuccin",
+        "dots-hyprland": "dots-hyprland",
         "home-manager": "home-manager",
         "minegrub-world-sel-theme": "minegrub-world-sel-theme",
         "nixpkgs": "nixpkgs_3",
+        "quickshell": "quickshell",
+        "rounded-polygon-qmljs": "rounded-polygon-qmljs",
         "sops-nix": "sops-nix",
         "spicetify-nix": "spicetify-nix",
         "treefmt-nix": "treefmt-nix",
         "zapret-discord-youtube": "zapret-discord-youtube",
         "zen-browser": "zen-browser"
+      }
+    },
+    "rounded-polygon-qmljs": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1771173575,
+        "narHash": "sha256-p1Ia0oQCWnik2saVMgv7IABkaJV43PoY7uuwXjXlc+Q=",
+        "owner": "end-4",
+        "repo": "rounded-polygon-qmljs",
+        "rev": "e31ec4cb4ebf6a46b267f5c42eabf6874916fa16",
+        "type": "github"
+      },
+      "original": {
+        "owner": "end-4",
+        "repo": "rounded-polygon-qmljs",
+        "type": "github"
       }
     },
     "sops-nix": {

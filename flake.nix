@@ -28,7 +28,18 @@
 
     zapret-discord-youtube.url = "github:kartavkun/zapret-discord-youtube";
     sops-nix.url = "github:Mic92/sops-nix";
-
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dots-hyprland = {
+      url = "github:end-4/dots-hyprland";
+      flake = false;
+    };
+    rounded-polygon-qmljs = {
+      url = "github:end-4/rounded-polygon-qmljs";
+      flake = false;
+    };
   };
 
   outputs =
