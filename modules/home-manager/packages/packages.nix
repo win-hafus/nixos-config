@@ -17,6 +17,8 @@
     hyprshot
     wlogout
     rofi
+    bluez
+    bluez-alsa
 
     alacritty
     ranger
@@ -52,4 +54,5 @@
     amneziawg-go
     onlyoffice-desktopeditors
   ];
+  
 }
