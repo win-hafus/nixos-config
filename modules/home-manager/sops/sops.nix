@@ -1,4 +1,3 @@
-# ./modules/home-manager/sops/sops.nix
 { config, ... }:
 {
   sops = {
