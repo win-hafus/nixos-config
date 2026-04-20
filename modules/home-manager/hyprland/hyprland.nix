@@ -6,32 +6,28 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      # Monitors
       monitor = "HDMI-A-1,1920x1080@180,0x0,1.0";
 
-      # Programs
       "$terminal" = "alacritty";
       "$fileManager" = "nautilus";
       "$menu" = "rofi -show drun";
       "$mainMod" = "SUPER";
 
-      # Autostart
       exec-once = [
-        "waybar &"
-        "clipse -listen"
+        "cliphist wipe"
+        "qs -c ii"
         "Telegram &"
         "discord &"
-        "awww-daemon &"
         "discover-overlay"
       ];
 
-      # Environment variables
       env = [
         "XCURSOR_SIZE,16"
         "HYPRCURSOR_SIZE,16"
+        "QML_IMPORT_PATH=/run/current-system/sw/lib/qt-6/qml"
+        "ILLOGICAL_IMPULSE_VIRTUAL_ENV=/run/current-system/sw"
       ];
 
-      # General settings
       general = {
         gaps_in = 5;
         gaps_out = 50;
@@ -43,12 +39,10 @@
         layout = "dwindle";
       };
 
-      # Decoration
       decoration = {
         rounding = 8;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
-
         shadow = {
           enabled = true;
           range = 4;
@@ -56,7 +50,6 @@
           scale = 0.5;
           color = "rgba(00000022)";
         };
-
         blur = {
           enabled = true;
           size = 3;
@@ -66,10 +59,8 @@
         };
       };
 
-      # Animations
       animations = {
         enabled = true;
-
         bezier = [
           "easeOutQuint,0.23,1,0.32,1"
           "easeInOutCubic,0.65,0.05,0.36,1"
@@ -83,7 +74,6 @@
           "windowMove,0.25,1,0.5,1"
           "snapBack,0.6,0,0.4,1"
         ];
-
         animation = [
           "global,1,10,default"
           "border,1,2,default"
@@ -107,36 +97,26 @@
         ];
       };
 
-      # Dwindle layout
       dwindle = {
         pseudotile = true;
         preserve_split = true;
       };
 
-      # Master layout
-      master = {
-        new_status = "master";
-      };
+      master.new_status = "master";
 
-      # Misc
       misc = {
         force_default_wallpaper = 0;
         disable_hyprland_logo = true;
       };
 
-      # Input
       input = {
         kb_layout = "us,ru";
         kb_options = "grp:alt_shift_toggle";
         follow_mouse = 1;
         sensitivity = 0;
-
-        touchpad = {
-          natural_scroll = true;
-        };
+        touchpad.natural_scroll = true;
       };
 
-      # Keybindings
       bind = [
         "$mainMod, Return, exec, $terminal"
         "$mainMod SHIFT, C, killactive,"
@@ -147,39 +127,26 @@
         ", Insert, exec, bash -c 'f=$(hyprshot -m region -o /home/${username}/Pictures/Screenshots) && [ -f \"$f\" ] && wl-copy < \"$f\"'"
         "SHIFT, Insert, exec, bash -c 'f=$(hyprshot -m window -o /home/${username}/Pictures/Screenshots) && [ -f \"$f\" ] && wl-copy < \"$f\"'"
         "CONTROL, Insert, exec, bash -c 'f=$(hyprshot -m output -o /home/${username}/Pictures/Screenshots) && [ -f \"$f\" ] && wl-copy < \"$f\"'"
-        # hyprlock
         "$mainMod, U, exec, hyprlock"
-
-        # float
         "$mainMod, G, pin"
         "$mainMod, C, centerwindow"
-
-        # tiling
         "$mainMod, V, togglefloating,"
         "$mainMod, B, layoutmsg, togglesplit, 0"
         "$mainMod, T, pseudo,"
         "$mainMod, F, fullscreen, 1"
         "$mainMod SHIFT, F, fullscreen, 0"
-
-        # Move focus
         "$mainMod, H, movefocus, l"
         "$mainMod, L, movefocus, r"
         "$mainMod, K, movefocus, u"
         "$mainMod, J, movefocus, d"
-
-        # Move windows
         "$mainMod SHIFT, H, movewindow, l"
         "$mainMod SHIFT, L, movewindow, r"
         "$mainMod SHIFT, K, movewindow, u"
         "$mainMod SHIFT, J, movewindow, d"
-
-        # Resize windows
         "$mainMod CONTROL, H, resizeactive, -20% 0"
         "$mainMod CONTROL, L, resizeactive, 20% 0"
         "$mainMod CONTROL, K, resizeactive, 0 20%"
         "$mainMod CONTROL, J, resizeactive, 0 -20%"
-
-        # Workspaces
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
         "$mainMod, 3, workspace, 3"
@@ -190,8 +157,6 @@
         "$mainMod, 8, workspace, 8"
         "$mainMod, 9, workspace, 9"
         "$mainMod, 0, workspace, 10"
-
-        # Move to workspace
         "$mainMod SHIFT, 1, movetoworkspace, 1"
         "$mainMod SHIFT, 2, movetoworkspace, 2"
         "$mainMod SHIFT, 3, movetoworkspace, 3"
@@ -202,12 +167,8 @@
         "$mainMod SHIFT, 8, movetoworkspace, 8"
         "$mainMod SHIFT, 9, movetoworkspace, 9"
         "$mainMod SHIFT, 0, movetoworkspace, 10"
-
-        # Special workspace
         "$mainMod, S, togglespecialworkspace, magic"
         "$mainMod SHIFT, S, movetoworkspace, special:magic"
-
-        # Mouse workspace navigation
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
       ];
@@ -233,10 +194,8 @@
         ", XF86AudioPrev, exec, playerctl previous"
       ];
 
-      # Layer rules
       layerrule = "animation slide, match:namespace notifications";
 
-      # Window rules
       windowrule = [
         "float on, match:class ^(imv)$"
         "float on, match:class ^(mpv)$"

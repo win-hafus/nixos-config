@@ -1,6 +1,7 @@
 {
   config,
   username,
+  pkgs,
   ...
 }:
 {
@@ -16,6 +17,7 @@
     sessionVariables = {
       EDITOR = "hx";
       ZSH_CUSTOM = "${config.home.homeDirectory}/.oh-my-zsh/custom";
+      QML_IMPORT_PATH = "${pkgs.kdePackages.kirigami}/lib/qt-6/qml:/run/current-system/sw/lib/qt-6/qml";
     };
   };
 

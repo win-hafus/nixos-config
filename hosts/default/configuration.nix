@@ -125,6 +125,7 @@
     nerd-fonts.fira-code
     nerd-fonts.droid-sans-mono
     nerd-fonts.jetbrains-mono
+    font-awesome
   ];
 
   fonts.fontDir.enable = true;
